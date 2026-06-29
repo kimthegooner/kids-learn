@@ -48,7 +48,7 @@ function pickVoice(voices: SpeechSynthesisVoice[], lang: string): SpeechSynthesi
   );
 }
 
-// 텍스트 한 마디를 말하고, 끝나면 resolve. (await 없이 동기 호출 → iOS 제스처 유지)
+// 텍스트 한 마디를 말하고, 끝나면 resolve.
 function speakText(text: string, lang: "ko-KR" | "en-GB"): Promise<void> {
   return new Promise((resolve) => {
     const ss = typeof window !== "undefined" ? window.speechSynthesis : undefined;
@@ -65,7 +65,15 @@ function speakText(text: string, lang: "ko-KR" | "en-GB"): Promise<void> {
     u.pitch = 1.1; // 살짝 밝게
     u.onend = () => resolve();
     u.onerror = () => resolve();
-    ss.speak(u);
+
+    // 재생 중일 때만 취소하고 잠깐 뒤 재생(안드로이드 cancel→speak 씹힘 방지).
+    // 아무것도 안 울릴 땐 곧바로 재생(iOS 제스처 유지).
+    if (ss.speaking || ss.pending) {
+      ss.cancel();
+      setTimeout(() => ss.speak(u), 80);
+    } else {
+      ss.speak(u);
+    }
   });
 }
 
@@ -90,21 +98,18 @@ export function cancelSpeech() {
 
 type SpeakableWord = { ko: string; en: string; audioKo?: string; audioEn?: string };
 
-// 한국어 한 번.
+// 한국어 한 번. (취소는 speakText 가 재생 중일 때만 처리)
 export async function sayKo(w: SpeakableWord) {
-  cancelSpeech();
   await playClip(w.audioKo, w.ko, "ko-KR");
 }
 
 // 영어 한 번.
 export async function sayEn(w: SpeakableWord) {
-  cancelSpeech();
   await playClip(w.audioEn, w.en, "en-GB");
 }
 
 // 병행: "사과" → (잠깐) → "apple" 연속 재생.
 export async function sayBoth(w: SpeakableWord) {
-  cancelSpeech();
   await playClip(w.audioKo, w.ko, "ko-KR");
   await new Promise((r) => setTimeout(r, 350));
   await playClip(w.audioEn, w.en, "en-GB");
@@ -112,6 +117,5 @@ export async function sayBoth(w: SpeakableWord) {
 
 // 임의 문장(게임 안내 등) 한국어로 말하기.
 export async function saySentenceKo(text: string) {
-  cancelSpeech();
   await speakText(text, "ko-KR");
 }
