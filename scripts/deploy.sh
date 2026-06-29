@@ -15,6 +15,10 @@ echo "▶ pushing to gh-pages…"
 cd out
 touch .nojekyll
 git init -b gh-pages -q
+# 일부 네트워크에서 push HTTP 400 나는 것 방지
+git config http.version HTTP/1.1
+git config http.postBuffer 524288000
+git config credential.helper '!gh auth git-credential'
 git add -A
 git -c user.email="deploy@local" -c user.name="deploy" commit -q -m "deploy $(date +%Y-%m-%d)"
 git push -f -q "$REPO" gh-pages
