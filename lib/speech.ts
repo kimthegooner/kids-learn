@@ -4,27 +4,40 @@
 
 let voicesCache: SpeechSynthesisVoice[] = [];
 
-function loadVoices(): Promise<SpeechSynthesisVoice[]> {
-  return new Promise((resolve) => {
-    if (typeof window === "undefined" || !window.speechSynthesis) {
-      resolve([]);
-      return;
-    }
-    const existing = window.speechSynthesis.getVoices();
-    if (existing.length > 0) {
-      voicesCache = existing;
-      resolve(existing);
-      return;
-    }
-    // 일부 브라우저는 voices 를 비동기로 로드한다.
-    const handler = () => {
-      voicesCache = window.speechSynthesis.getVoices();
-      resolve(voicesCache);
-    };
-    window.speechSynthesis.onvoiceschanged = handler;
-    // 안전장치: 1초 후엔 가진 것으로라도 진행
-    setTimeout(() => resolve(window.speechSynthesis.getVoices()), 1000);
-  });
+// 음성목록을 동기로 갱신. (iOS는 재생 직전 await 하면 제스처가 끊겨 차단되므로 미리 채워둔다)
+function refreshVoices() {
+  if (typeof window === "undefined" || !window.speechSynthesis) return;
+  const v = window.speechSynthesis.getVoices();
+  if (v.length) voicesCache = v;
+}
+
+// 모듈 로드 시 + 비동기 로드 완료 시 미리 받아둔다.
+if (typeof window !== "undefined" && window.speechSynthesis) {
+  refreshVoices();
+  try {
+    window.speechSynthesis.addEventListener("voiceschanged", refreshVoices);
+  } catch {
+    window.speechSynthesis.onvoiceschanged = refreshVoices;
+  }
+}
+
+// iOS는 첫 사용자 제스처 때 음성 엔진을 깨워야 이후 자동재생도 소리가 난다.
+let unlocked = false;
+function unlockSpeech() {
+  if (unlocked || typeof window === "undefined" || !window.speechSynthesis) return;
+  unlocked = true;
+  refreshVoices();
+  try {
+    const u = new SpeechSynthesisUtterance(" ");
+    u.volume = 0;
+    window.speechSynthesis.speak(u);
+  } catch {
+    // noop
+  }
+}
+if (typeof window !== "undefined") {
+  window.addEventListener("pointerdown", unlockSpeech, { once: true });
+  window.addEventListener("touchend", unlockSpeech, { once: true });
 }
 
 function pickVoice(voices: SpeechSynthesisVoice[], lang: string): SpeechSynthesisVoice | undefined {
@@ -35,23 +48,24 @@ function pickVoice(voices: SpeechSynthesisVoice[], lang: string): SpeechSynthesi
   );
 }
 
-// 텍스트 한 마디를 말하고, 끝나면 resolve.
+// 텍스트 한 마디를 말하고, 끝나면 resolve. (await 없이 동기 호출 → iOS 제스처 유지)
 function speakText(text: string, lang: "ko-KR" | "en-GB"): Promise<void> {
-  return new Promise(async (resolve) => {
-    if (typeof window === "undefined" || !window.speechSynthesis) {
+  return new Promise((resolve) => {
+    const ss = typeof window !== "undefined" ? window.speechSynthesis : undefined;
+    if (!ss) {
       resolve();
       return;
     }
-    const voices = voicesCache.length ? voicesCache : await loadVoices();
+    if (!voicesCache.length) refreshVoices();
     const u = new SpeechSynthesisUtterance(text);
     u.lang = lang;
-    const v = pickVoice(voices, lang);
-    if (v) u.voice = v;
-    u.rate = 0.85; // 아이용으로 약간 천천히
+    const v = pickVoice(voicesCache, lang);
+    if (v) u.voice = v; // 없으면 u.lang 으로 브라우저 기본 음성 사용
+    u.rate = 0.9; // 아이용으로 약간 천천히
     u.pitch = 1.1; // 살짝 밝게
     u.onend = () => resolve();
     u.onerror = () => resolve();
-    window.speechSynthesis.speak(u);
+    ss.speak(u);
   });
 }
 
