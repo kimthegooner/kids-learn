@@ -1,0 +1,27 @@
+[
+  { "char": "ㄱ", "sound": "그", "type": "consonant", "strokes": ["M25 25 L75 25 L75 78"] },
+  { "char": "ㄴ", "sound": "느", "type": "consonant", "strokes": ["M30 22 L30 75 L78 75"] },
+  { "char": "ㄷ", "sound": "드", "type": "consonant", "strokes": ["M26 24 L76 24", "M26 24 L26 76 L76 76"] },
+  { "char": "ㄹ", "sound": "르", "type": "consonant", "strokes": ["M26 22 L74 22 L74 50", "M74 50 L26 50 L26 78", "M26 78 L74 78"] },
+  { "char": "ㅁ", "sound": "므", "type": "consonant", "strokes": ["M28 22 L28 78", "M28 22 L74 22 L74 78", "M28 78 L74 78"] },
+  { "char": "ㅂ", "sound": "브", "type": "consonant", "strokes": ["M28 20 L28 80", "M72 20 L72 80", "M28 52 L72 52", "M28 80 L72 80"] },
+  { "char": "ㅅ", "sound": "스", "type": "consonant", "strokes": ["M50 22 L24 78", "M50 40 L76 78"] },
+  { "char": "ㅇ", "sound": "으", "type": "consonant", "strokes": ["M50 22 A28 28 0 1 0 50.1 22"] },
+  { "char": "ㅈ", "sound": "즈", "type": "consonant", "strokes": ["M26 28 L74 28", "M50 28 L26 78", "M50 42 L74 78"] },
+  { "char": "ㅊ", "sound": "츠", "type": "consonant", "strokes": ["M42 12 L58 20", "M24 32 L76 32", "M50 32 L26 80", "M50 46 L74 80"] },
+  { "char": "ㅋ", "sound": "크", "type": "consonant", "strokes": ["M25 24 L75 24 L75 78", "M25 50 L75 50"] },
+  { "char": "ㅌ", "sound": "트", "type": "consonant", "strokes": ["M26 22 L74 22", "M26 22 L26 78 L74 78", "M26 50 L74 50"] },
+  { "char": "ㅍ", "sound": "프", "type": "consonant", "strokes": ["M24 28 L76 28", "M34 28 L34 74", "M66 28 L66 74", "M24 74 L76 74"] },
+  { "char": "ㅎ", "sound": "흐", "type": "consonant", "strokes": ["M40 14 L60 14", "M28 32 L72 32", "M50 44 A18 18 0 1 0 50.1 44"] },
+
+  { "char": "ㅏ", "sound": "아", "type": "vowel", "strokes": ["M46 16 L46 84", "M46 50 L74 50"] },
+  { "char": "ㅑ", "sound": "야", "type": "vowel", "strokes": ["M46 16 L46 84", "M46 38 L74 38", "M46 62 L74 62"] },
+  { "char": "ㅓ", "sound": "어", "type": "vowel", "strokes": ["M26 50 L54 50", "M54 16 L54 84"] },
+  { "char": "ㅕ", "sound": "여", "type": "vowel", "strokes": ["M26 38 L54 38", "M26 62 L54 62", "M54 16 L54 84"] },
+  { "char": "ㅗ", "sound": "오", "type": "vowel", "strokes": ["M50 30 L50 70", "M22 70 L78 70"] },
+  { "char": "ㅛ", "sound": "요", "type": "vowel", "strokes": ["M38 32 L38 66", "M62 32 L62 66", "M22 66 L78 66"] },
+  { "char": "ㅜ", "sound": "우", "type": "vowel", "strokes": ["M22 40 L78 40", "M50 40 L50 80"] },
+  { "char": "ㅠ", "sound": "유", "type": "vowel", "strokes": ["M22 38 L78 38", "M38 38 L38 76", "M62 38 L62 76"] },
+  { "char": "ㅡ", "sound": "으", "type": "vowel", "strokes": ["M20 50 L80 50"] },
+  { "char": "ㅣ", "sound": "이", "type": "vowel", "strokes": ["M50 16 L50 84"] }
+]

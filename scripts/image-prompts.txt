@@ -1,0 +1,27 @@
+아래 프롬프트로 16장을 생성해 public/images/<id>.png 로 저장하세요.
+스타일은 고정 prefix로 통일됩니다. (no text / off-white background 유지 권장)
+
+공통 스타일:
+  cute flat illustration for a children's app, soft rounded shapes,
+  bright pastel colors, thick outlines, centered on a plain off-white
+  background, no text, no shadow.
+
+----------------------------------------------------------------
+dog     → A single friendly dog, {STYLE}
+cat     → A single cute cat, {STYLE}
+rabbit  → A single cute rabbit, {STYLE}
+bear    → A single cute teddy bear, {STYLE}
+apple   → A single red apple, {STYLE}
+banana  → A single yellow banana, {STYLE}
+milk    → A single glass of milk, {STYLE}
+bread   → A single loaf of bread, {STYLE}
+hand    → A single open hand, {STYLE}
+eye     → A single friendly eye, {STYLE}
+nose    → A single cartoon nose on a simple face, {STYLE}
+car     → A single cute car, {STYLE}
+ball    → A single colorful ball, {STYLE}
+house   → A single small house, {STYLE}
+star    → A single yellow star, {STYLE}
+flower  → A single pink flower, {STYLE}
+----------------------------------------------------------------
+{STYLE} = 위 "공통 스타일" 문장을 그대로 붙여넣기.
