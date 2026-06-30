@@ -734,25 +734,35 @@ img.write-thumb {
   font-weight: 800;
   font-size: 0.9em;
 }
-/* 캐릭터 얼굴(눈) — 캐릭터 윗부분 가운데 */
+/* 우리만의 귀여운 얼굴(눈 + 미소) — 캐릭터 윗부분 가운데 */
 .nb-face {
   position: absolute;
   top: clamp(5px, 1.3vw, 10px);
   left: 0;
   right: 0;
   display: flex;
-  justify-content: center;
-  gap: clamp(4px, 1vw, 7px);
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2px, 0.6vw, 4px);
   pointer-events: none;
 }
-.nb-face::before,
-.nb-face::after {
-  content: "";
-  width: clamp(9px, 1.8vw, 13px);
-  height: clamp(9px, 1.8vw, 13px);
+.nb-eyes {
+  display: flex;
+  gap: clamp(4px, 1vw, 7px);
+}
+.nb-eyes i {
+  width: clamp(8px, 1.6vw, 12px);
+  height: clamp(8px, 1.6vw, 12px);
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 60%, #222 0 35%, #fff 39% 100%);
+  background: radial-gradient(circle at 50% 62%, #222 0 34%, #fff 38% 100%);
   border: 1.5px solid rgba(0, 0, 0, 0.12);
+}
+.nb-mouth {
+  width: clamp(9px, 1.7vw, 13px);
+  height: clamp(5px, 1vw, 7px);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-top: none;
+  border-radius: 0 0 60% 60%;
 }
 .quiz-options {
   list-style: none;

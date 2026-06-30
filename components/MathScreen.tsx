@@ -63,7 +63,13 @@ function Blocks({ value, faded = 0 }: { value: number; faded?: number }) {
           />
         );
       })}
-      <span className="nb-face" />
+      <span className="nb-face">
+        <span className="nb-eyes">
+          <i />
+          <i />
+        </span>
+        <span className="nb-mouth" />
+      </span>
     </div>
   );
 }
