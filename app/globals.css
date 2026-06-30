@@ -705,10 +705,11 @@ img.write-thumb {
   font-size: clamp(26px, 5vw, 42px);
   font-weight: 800;
 }
-.nb-group {
+.nb-char {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(5, auto);
-  gap: 5px;
+  gap: 4px;
+  align-self: flex-end; /* 캐릭터들이 바닥 기준으로 나란히 서게 */
 }
 .cube {
   width: clamp(24px, 4.6vw, 38px);
@@ -733,24 +734,25 @@ img.write-thumb {
   font-weight: 800;
   font-size: 0.9em;
 }
-/* 캐릭터 눈 (맨 앞 큐브에) */
-.eyes {
+/* 캐릭터 얼굴(눈) — 캐릭터 윗부분 가운데 */
+.nb-face {
   position: absolute;
-  top: 24%;
+  top: clamp(5px, 1.3vw, 10px);
   left: 0;
   right: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: clamp(3px, 0.8vw, 6px);
+  gap: clamp(4px, 1vw, 7px);
+  pointer-events: none;
 }
-.eyes::before,
-.eyes::after {
+.nb-face::before,
+.nb-face::after {
   content: "";
-  width: clamp(7px, 1.4vw, 10px);
-  height: clamp(7px, 1.4vw, 10px);
+  width: clamp(9px, 1.8vw, 13px);
+  height: clamp(9px, 1.8vw, 13px);
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 60%, #222 0 36%, #fff 40% 100%);
+  background: radial-gradient(circle at 50% 60%, #222 0 35%, #fff 39% 100%);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
 }
 .quiz-options {
   list-style: none;

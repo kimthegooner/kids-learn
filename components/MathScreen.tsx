@@ -41,23 +41,29 @@ const NB_COLORS = [
 ];
 const colorFor = (n: number) => NB_COLORS[(n - 1) % NB_COLORS.length] ?? "#888";
 
-// 큐브 count개 (value 색). faded개는 뒤에서부터 ✕ 처리.
-function Blocks({ count, value, faded = 0 }: { count: number; value: number; faded?: number }) {
+// 숫자별 정식 넘버블록스 형태(열 수): 소수(2,3,5,7)는 1열 탑, 합성수는 사각형.
+// 4=2×2, 6=2×3, 8=2×4, 9=3×3.
+const COLS: Record<number, number> = {
+  1: 1, 2: 1, 3: 1, 4: 2, 5: 1, 6: 2, 7: 1, 8: 2, 9: 3,
+};
+
+// 숫자 value 를 그 형태의 큐브 캐릭터로. faded개는 뒤에서부터 ✕(빼기).
+function Blocks({ value, faded = 0 }: { value: number; faded?: number }) {
+  const cols = COLS[value] ?? Math.min(5, value);
   const color = colorFor(value);
   return (
-    <div className="nb-group">
-      {Array.from({ length: count }).map((_, i) => {
-        const gone = faded > 0 && i >= count - faded;
+    <div className="nb-char" style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}>
+      {Array.from({ length: value }).map((_, i) => {
+        const gone = faded > 0 && i >= value - faded;
         return (
           <div
             key={i}
             className={`cube ${gone ? "gone" : ""}`}
             style={gone ? undefined : { background: color }}
-          >
-            {i === 0 && <span className="eyes" />}
-          </div>
+          />
         );
       })}
+      <span className="nb-face" />
     </div>
   );
 }
@@ -66,15 +72,15 @@ function HintBlocks({ a, b, op }: { a: number; b: number; op: "+" | "−" }) {
   if (op === "+") {
     return (
       <div className="mp-hint">
-        <Blocks count={a} value={a} />
+        <Blocks value={a} />
         <span className="nb-op">➕</span>
-        <Blocks count={b} value={b} />
+        <Blocks value={b} />
       </div>
     );
   }
   return (
     <div className="mp-hint">
-      <Blocks count={a} value={a} faded={b} />
+      <Blocks value={a} faded={b} />
     </div>
   );
 }
