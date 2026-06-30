@@ -673,6 +673,58 @@ img.write-thumb {
   background: #fde9e8;
   opacity: 0.5;
 }
+
+/* 힌트 버튼 + 점 */
+.mp-hint-btn {
+  border: none;
+  background: #fff3d6;
+  color: #8a5a00;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: clamp(16px, 2.6vw, 20px);
+  font-weight: 800;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+.mp-hint-btn:active {
+  transform: scale(0.96);
+}
+.mp-hint-dots {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: clamp(7px, 1.6vw, 13px);
+  justify-content: center;
+  padding: clamp(12px, 2vw, 18px);
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+.dot {
+  width: clamp(26px, 5vw, 40px);
+  height: clamp(26px, 5vw, 40px);
+  border-radius: 50%;
+  position: relative;
+}
+.dot.a {
+  background: var(--accent-2);
+}
+.dot.b {
+  background: var(--accent);
+}
+.dot.gone {
+  background: #e3dcd3;
+}
+.dot.gone::after {
+  content: "✕";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e0584f;
+  font-weight: 800;
+  font-size: 0.85em;
+}
 .quiz-options {
   list-style: none;
   margin: 0;

@@ -31,11 +31,36 @@ function makeOptions(answer: number): number[] {
   return shuffle([...set]);
 }
 
+// 힌트: 셀 수 있는 점으로 보여주기 (5개씩 줄맞춤 → 십 단위 감각).
+// 더하기: 파란 점 a개 + 주황 점 b개. 빼기: 점 a개 중 뒤 b개를 ✕로 지움.
+function HintDots({ a, b, op }: { a: number; b: number; op: "+" | "−" }) {
+  if (op === "+") {
+    return (
+      <div className="mp-hint-dots">
+        {Array.from({ length: a }).map((_, i) => (
+          <span key={"a" + i} className="dot a" />
+        ))}
+        {Array.from({ length: b }).map((_, i) => (
+          <span key={"b" + i} className="dot b" />
+        ))}
+      </div>
+    );
+  }
+  return (
+    <div className="mp-hint-dots">
+      {Array.from({ length: a }).map((_, i) => (
+        <span key={i} className={`dot a ${i >= a - b ? "gone" : ""}`} />
+      ))}
+    </div>
+  );
+}
+
 export default function MathScreen({ onStar }: { onStar: () => void }) {
   const [prob, setProb] = useState<Problem | null>(null);
   const [options, setOptions] = useState<number[]>([]);
   const [wrong, setWrong] = useState<number[]>([]);
   const [solved, setSolved] = useState(false);
+  const [showHint, setShowHint] = useState(false);
 
   // 다음 문제 (마운트 시점에 생성 → SSR 하이드레이션 불일치 방지)
   const next = useCallback(() => {
@@ -44,6 +69,7 @@ export default function MathScreen({ onStar }: { onStar: () => void }) {
     setOptions(makeOptions(p.answer));
     setWrong([]);
     setSolved(false);
+    setShowHint(false);
     saySentenceKo(`${p.a} ${p.op === "+" ? "더하기" : "빼기"} ${p.b}는?`);
   }, []);
 
@@ -61,7 +87,8 @@ export default function MathScreen({ onStar }: { onStar: () => void }) {
       setTimeout(next, 1300);
     } else if (!wrong.includes(n)) {
       setWrong((w) => [...w, n]);
-      saySentenceKo("다시!");
+      setShowHint(true); // 틀리면 힌트 자동으로 보여주기
+      saySentenceKo("다시! 세어볼까?");
     }
   };
 
@@ -79,6 +106,12 @@ export default function MathScreen({ onStar }: { onStar: () => void }) {
           {solved ? prob.answer : "?"}
         </span>
       </div>
+
+      <button className="mp-hint-btn" onClick={() => setShowHint((h) => !h)}>
+        💡 힌트
+      </button>
+      {showHint && <HintDots a={prob.a} b={prob.b} op={prob.op} />}
+
       <div className="mp-choices">
         {options.map((n) => {
           const cls = solved && n === prob.answer ? "correct" : wrong.includes(n) ? "wrong" : "";
