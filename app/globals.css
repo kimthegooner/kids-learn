@@ -689,32 +689,40 @@ img.write-thumb {
 .mp-hint-btn:active {
   transform: scale(0.96);
 }
-.mp-hint-dots {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  gap: clamp(7px, 1.6vw, 13px);
+/* 넘버블록스 스타일 큐브 힌트 */
+.mp-hint {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding: clamp(12px, 2vw, 18px);
+  flex-wrap: wrap;
+  gap: clamp(10px, 2.5vw, 22px);
+  padding: clamp(12px, 2vw, 20px);
   background: var(--card);
   border-radius: 22px;
   box-shadow: var(--shadow);
 }
-.dot {
-  width: clamp(26px, 5vw, 40px);
-  height: clamp(26px, 5vw, 40px);
-  border-radius: 50%;
+.nb-op {
+  font-size: clamp(26px, 5vw, 42px);
+  font-weight: 800;
+}
+.nb-group {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 5px;
+}
+.cube {
+  width: clamp(24px, 4.6vw, 38px);
+  height: clamp(24px, 4.6vw, 38px);
+  border-radius: 7px;
   position: relative;
+  box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.16),
+    inset 0 3px 0 rgba(255, 255, 255, 0.28);
 }
-.dot.a {
-  background: var(--accent-2);
+.cube.gone {
+  background: #e6ded5;
+  box-shadow: none;
 }
-.dot.b {
-  background: var(--accent);
-}
-.dot.gone {
-  background: #e3dcd3;
-}
-.dot.gone::after {
+.cube.gone::after {
   content: "✕";
   position: absolute;
   inset: 0;
@@ -723,7 +731,26 @@ img.write-thumb {
   justify-content: center;
   color: #e0584f;
   font-weight: 800;
-  font-size: 0.85em;
+  font-size: 0.9em;
+}
+/* 캐릭터 눈 (맨 앞 큐브에) */
+.eyes {
+  position: absolute;
+  top: 24%;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(3px, 0.8vw, 6px);
+}
+.eyes::before,
+.eyes::after {
+  content: "";
+  width: clamp(7px, 1.4vw, 10px);
+  height: clamp(7px, 1.4vw, 10px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 60%, #222 0 36%, #fff 40% 100%);
 }
 .quiz-options {
   list-style: none;

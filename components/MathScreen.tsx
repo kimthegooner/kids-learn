@@ -31,26 +31,50 @@ function makeOptions(answer: number): number[] {
   return shuffle([...set]);
 }
 
-// 힌트: 셀 수 있는 점으로 보여주기 (5개씩 줄맞춤 → 십 단위 감각).
-// 더하기: 파란 점 a개 + 주황 점 b개. 빼기: 점 a개 중 뒤 b개를 ✕로 지움.
-function HintDots({ a, b, op }: { a: number; b: number; op: "+" | "−" }) {
+// 넘버블록스 스타일 힌트: 숫자를 색깔 큐브 캐릭터로 (5개씩 줄맞춤 → 십 단위 감각).
+// 더하기: a 캐릭터 ➕ b 캐릭터. 빼기: a 큐브 중 뒤 b개를 ✕로 사라지게.
+
+// 숫자별 색 (넘버블록스 느낌: 1빨강 2주황 3노랑 4초록 5파랑 6남 7보라 8분홍 9회색)
+const NB_COLORS = [
+  "#ec4d3d", "#f59331", "#f7d046", "#57c047", "#36bfe6",
+  "#6a7bd6", "#b15fd1", "#ef6cab", "#8a96a3",
+];
+const colorFor = (n: number) => NB_COLORS[(n - 1) % NB_COLORS.length] ?? "#888";
+
+// 큐브 count개 (value 색). faded개는 뒤에서부터 ✕ 처리.
+function Blocks({ count, value, faded = 0 }: { count: number; value: number; faded?: number }) {
+  const color = colorFor(value);
+  return (
+    <div className="nb-group">
+      {Array.from({ length: count }).map((_, i) => {
+        const gone = faded > 0 && i >= count - faded;
+        return (
+          <div
+            key={i}
+            className={`cube ${gone ? "gone" : ""}`}
+            style={gone ? undefined : { background: color }}
+          >
+            {i === 0 && <span className="eyes" />}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function HintBlocks({ a, b, op }: { a: number; b: number; op: "+" | "−" }) {
   if (op === "+") {
     return (
-      <div className="mp-hint-dots">
-        {Array.from({ length: a }).map((_, i) => (
-          <span key={"a" + i} className="dot a" />
-        ))}
-        {Array.from({ length: b }).map((_, i) => (
-          <span key={"b" + i} className="dot b" />
-        ))}
+      <div className="mp-hint">
+        <Blocks count={a} value={a} />
+        <span className="nb-op">➕</span>
+        <Blocks count={b} value={b} />
       </div>
     );
   }
   return (
-    <div className="mp-hint-dots">
-      {Array.from({ length: a }).map((_, i) => (
-        <span key={i} className={`dot a ${i >= a - b ? "gone" : ""}`} />
-      ))}
+    <div className="mp-hint">
+      <Blocks count={a} value={a} faded={b} />
     </div>
   );
 }
@@ -110,7 +134,7 @@ export default function MathScreen({ onStar }: { onStar: () => void }) {
       <button className="mp-hint-btn" onClick={() => setShowHint((h) => !h)}>
         💡 힌트
       </button>
-      {showHint && <HintDots a={prob.a} b={prob.b} op={prob.op} />}
+      {showHint && <HintBlocks a={prob.a} b={prob.b} op={prob.op} />}
 
       <div className="mp-choices">
         {options.map((n) => {
