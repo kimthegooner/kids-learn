@@ -1,0 +1,36 @@
+{
+  "created": "2026-09-08",
+  "description": "Realistic transparent AR accessories and torso textures. Original generated alpha preserved.",
+  "assets": [
+    {
+      "id": "crown",
+      "file": "/camera/artwork/crown-v2.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: product-mockup. Asset type: production AR face-filter transparent PNG sprite. A single exquisite small open royal crown, front-on orthographic view, perfectly symmetrical, no perspective tilt, no head or person. Polished warm 18k gold with realistic beveled edges, fine filigree engraving, luminous emerald-cut teal jewels and one central rose-pink gemstone, tiny pearls. Elegant playful luxury, cinematic 3D product rendering, crisp realistic materials and subtle self-shadowing, not flat illustration. The crown lower band is a gently curved ellipse viewed straight from the front; five tasteful points, low wearable proportions. Centered object, fully visible, 8 percent transparent padding. Truly transparent alpha background, transparent through all holes, no floor, no drop shadow outside the object, no checkerboard, no text or logo. Landscape 3:2 composition."
+    },
+    {
+      "id": "bunny",
+      "file": "/camera/artwork/bunny-v2.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: product-mockup. Asset type: production AR face-filter transparent PNG sprite. One premium bunny-ears headband seen perfectly front-on, orthographic, symmetrical pair of long softly curved upright rabbit ears, realistic fluffy ivory fur with individual fine hairs at the edges, pink velvet inner ears with soft warm shading, plush padded thin curved headband along the bottom. Charming high-end 3D animated film prop photographed in soft studio light, convincing volume and tactile fur, not a flat drawing. No head, face, animal or mannequin, just the wearable accessory. Ears separated clearly, entire object visible, centered with 6 percent transparent padding. Truly transparent alpha background including between ears and under headband, no floor, no cast shadow outside the object, no checkerboard, no lettering, no watermark. Square composition."
+    },
+    {
+      "id": "glasses",
+      "file": "/camera/artwork/glasses-v2.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: product-mockup. Asset type: production AR face-filter transparent PNG sprite. A single pair of beautiful modern round-square sunglasses, perfectly front-on orthographic and symmetrical, slim translucent honey tortoiseshell acetate rims, fine champagne gold bridge and metal details, polished bevels, softly reflective graduated smoky teal lenses that are partially transparent, restrained realistic white studio reflection only in upper outer lens corners. Rounded rectangular panto lenses, elegant proportions, realistic luxurious 3D product rendering, no cartoon heavy outlines. Two short temple stubs barely visible at edges; no unfolded arms. No human, no face, no mannequin. Centered fully visible eyewear with 7 percent transparent padding. Truly transparent alpha background, including outside frames and through bridge, lenses semi-transparent. No floor, no ground shadow, no checkerboard, no lettering or logo. Landscape composition 3:1."
+    },
+    {
+      "id": "hanbok",
+      "file": "/camera/artwork/hanbok-v2.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: product-mockup. Asset type: realistic transparent PNG torso costume for an AR virtual try-on. Front-on perfectly symmetrical traditional Korean hanbok on an invisible ghost mannequin, with NO person, NO head, NO neck, NO hands and NO sleeves: central torso garment ONLY. Delicate warm ivory silk jeogori bodice with crossed white dongjeong collar, beautifully tied teal otgoreum ribbons at the chest, tiny gold floral embroidery along lower bodice, a luxurious muted peacock teal silk chima skirt with realistic full vertical pleats and soft satin sheen extending to the lower hem. The bodice shoulder edges terminate at the armholes: strictly no sleeves or arms protruding beyond the central torso. Elegant museum-quality clothing photograph, detailed woven silk fibers, convincing natural fabric folds, soft studio lighting from upper left, polished high-end product image. Long portrait composition 2:3, whole garment centered with 5 percent transparent padding. Truly transparent alpha background including open neck area, no visible mannequin, no hanger, no ground shadow, no floor, no checkerboard, no writing or logos."
+    },
+    {
+      "id": "football",
+      "file": "/camera/artwork/football-v2.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: product-mockup. Asset type: realistic transparent PNG torso costume for an AR virtual try-on. Front-on perfectly symmetrical premium red football jersey CENTRAL TORSO PANEL on an invisible ghost mannequin, no sleeves: shoulder edges stop exactly at armholes. No head, neck, arms, hands or visible mannequin. Athletic knit fabric with finely visible micro-mesh, deep red side panels, subtle tonal jacquard striping, narrow ivory V-neck collar and ivory piping, convincing natural cloth folds and dimensional shading. Small fictional gold laurel-and-star crest on upper left chest, no real team marks. One clean large ivory number '7' centered on chest and tiny text 'FOREST FC' above it. Premium sports product photography with soft studio lighting from upper left, material realism, crisp outlines. Whole torso from shoulders to shirt hem centered, compact portrait composition 4:5, transparent alpha background and neck hole, 5 percent transparent padding, no hanger, no floor, no shadow outside the garment, no checkerboard, no other objects."
+    }
+  ]
+}
