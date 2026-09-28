@@ -1,0 +1,254 @@
+[
+  {
+    "id": "saka",
+    "label": "사카",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bukayo_Saka_England_v_Ghana_23_June_2026-057_(cropped).jpg",
+    "image": "/images/players/saka.jpg"
+  },
+  {
+    "id": "haaland",
+    "label": "홀란드",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Erling_Haaland_Morocco_v_Norway_7_June_2026-51.jpg",
+    "image": "/images/players/haaland.jpg"
+  },
+  {
+    "id": "yamal",
+    "label": "야말",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lamine_Yamal_France_v_Spain_7.24.26-142.jpg",
+    "image": "/images/players/yamal.jpg"
+  },
+  {
+    "id": "son",
+    "label": "손흥민",
+    "author": "Ujishadow",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:BFA_2023_-2_Heung-Min_Son_(cropped).jpg",
+    "image": "/images/players/son.jpg"
+  },
+  {
+    "id": "lee-kang-in",
+    "label": "이강인",
+    "author": "Republic of  Korea from Seoul, Republic of Korea",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lee_Kang-in_-_2022_(52551771501)_(cropped).jpg",
+    "image": "/images/players/lee-kang-in.jpg"
+  },
+  {
+    "id": "kim-min-jae",
+    "label": "김민재",
+    "author": "Werner100359",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:FC_Red_Bull_Salzburg_gegen_Bayern_M%C3%BCnchen_(2025-01-06_Testspiel)_26.jpg",
+    "image": "/images/players/kim-min-jae.jpg"
+  },
+  {
+    "id": "park-ji-sung",
+    "label": "박지성",
+    "author": "Korea.net / Korean Culture and Information Service",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Park_Ji-sung_G20_Seoul_Summit_Ambassador_(cropped).jpg",
+    "image": "/images/players/park-ji-sung.jpg"
+  },
+  {
+    "id": "messi",
+    "label": "메시",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Leo_Messi_Argentina_v_Egypt_7_July_2026-1.jpg",
+    "image": "/images/players/messi.jpg"
+  },
+  {
+    "id": "ronaldo",
+    "label": "호날두",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_(cropped).jpg",
+    "image": "/images/players/ronaldo.jpg"
+  },
+  {
+    "id": "mbappe",
+    "label": "음바페",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kylian_Mbappe_France_v_Senegal_16_June_2026-391_(cropped).jpg",
+    "image": "/images/players/mbappe.jpg"
+  },
+  {
+    "id": "neymar",
+    "label": "네이마르",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Neymar_Junior_Brazil_V_Morocco_13_June_2026-40.jpg",
+    "image": "/images/players/neymar.jpg"
+  },
+  {
+    "id": "salah",
+    "label": "살라",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mohamed_Salah_Argentina_v_Egypt_7_July_2026-163_(cropped).jpg",
+    "image": "/images/players/salah.jpg"
+  },
+  {
+    "id": "kane",
+    "label": "케인",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Harry_Kane_England_v_Ghana_23_June_2026-219_(cropped).jpg",
+    "image": "/images/players/kane.jpg"
+  },
+  {
+    "id": "bellingham",
+    "label": "벨링엄",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jude_Bellingham_England_v_Ghana_23_June_2026-061_(cropped).jpg",
+    "image": "/images/players/bellingham.jpg"
+  },
+  {
+    "id": "vinicius",
+    "label": "비니시우스",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vin%C3%ADcius_J%C3%BAnior_Brazil_V_Morocco_13_June_2026-207_(cropped).jpg",
+    "image": "/images/players/vinicius.jpg"
+  },
+  {
+    "id": "de-bruyne",
+    "label": "더브라위너",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kevin_De_Bruyne_USMNT_v_Belgium_Mar_28_2026-64_(cropped).jpg",
+    "image": "/images/players/de-bruyne.jpg"
+  },
+  {
+    "id": "odegaard",
+    "label": "외데고르",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Martin_Odegaard_France_v_Norway_26_June_26-014.jpg",
+    "image": "/images/players/odegaard.jpg"
+  },
+  {
+    "id": "declan-rice",
+    "label": "라이스",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Declan_Rice_England_v_Ghana_23_June_2026-150.jpg",
+    "image": "/images/players/declan-rice.jpg"
+  },
+  {
+    "id": "palmer",
+    "label": "팔머",
+    "author": "The White House",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Cole_Palmer_2025_FIFA_Club_World_Cup_Final.jpg",
+    "image": "/images/players/palmer.jpg"
+  },
+  {
+    "id": "rodri",
+    "label": "로드리",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rodri_Argentina_v_Spain_19_July_2026-187_(cropped).jpg",
+    "image": "/images/players/rodri.jpg"
+  },
+  {
+    "id": "pedri",
+    "label": "페드리",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pedri_France_v_Spain_7.24.26-245.jpg",
+    "image": "/images/players/pedri.jpg"
+  },
+  {
+    "id": "musiala",
+    "label": "무시알라",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jamal_Musiala_Ecuador_v_Germany_25_June_2026-174_(cropped).jpg",
+    "image": "/images/players/musiala.jpg"
+  },
+  {
+    "id": "lewandowski",
+    "label": "레반도프스키",
+    "author": "Sven Mandel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2019147183134_2019-05-27_Fussball_1.FC_Kaiserslautern_vs_FC_Bayern_M%C3%BCnchen_-_Sven_-_1D_X_MK_II_-_0228_-_B70I8527_(cropped).jpg",
+    "image": "/images/players/lewandowski.jpg"
+  },
+  {
+    "id": "modric",
+    "label": "모드리치",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Luka_Modric_Croatia_v_Portugal_2_July_2026-055.jpg",
+    "image": "/images/players/modric.jpg"
+  },
+  {
+    "id": "van-dijk",
+    "label": "판데이크",
+    "author": "Ailura",
+    "license": "CC BY-SA 3.0 at",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/at/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:20160604_AUT_NED_8876_(cropped).jpg",
+    "image": "/images/players/van-dijk.jpg"
+  },
+  {
+    "id": "alisson",
+    "label": "알리송",
+    "author": "Bryan Berlin",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Alisson_Becker_Brazil_V_Morocco_13_June_2026-117_(cropped).jpg",
+    "image": "/images/players/alisson.jpg"
+  },
+  {
+    "id": "courtois",
+    "label": "쿠르투아",
+    "author": "Кирилл Венедиктов",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thibaut_Courtois_at_the_2018_World_Cup_(cropped).jpg",
+    "image": "/images/players/courtois.jpg"
+  },
+  {
+    "id": "ronaldinho",
+    "label": "호나우지뉴",
+    "author": "Marcos Corrêa/PR",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ronaldinho_in_2019.jpg",
+    "image": "/images/players/ronaldinho.jpg"
+  }
+]

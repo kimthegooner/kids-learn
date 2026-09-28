@@ -3,7 +3,9 @@
 // 획순 따라쓰기: 자음·모음 글자를 골라, 획이 그려지는 순서를 번호와 함께 보여주고(애니메이션),
 // 그 위에 손가락으로 따라 쓴다. 정확도 채점은 없음(5세용) — 순서·방향을 눈으로 익히는 데 집중.
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import TraceCanvas from "./TraceCanvas";
+import { recordEvent } from "@/lib/progress";
 import strokesData from "@/data/strokes.json";
 import { saySentenceKo, cancelSpeech } from "@/lib/speech";
 
@@ -95,70 +97,8 @@ export default function StrokeScreen() {
 }
 
 function StrokeStage({ glyph }: { glyph: Glyph }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const drawing = useRef(false);
-  const last = useRef<{ x: number; y: number } | null>(null);
-
-  const setupCanvas = useCallback(() => {
-    const c = canvasRef.current;
-    if (!c) return;
-    const rect = c.getBoundingClientRect();
-    const dpr = window.devicePixelRatio || 1;
-    c.width = Math.round(rect.width * dpr);
-    c.height = Math.round(rect.height * dpr);
-    const ctx = c.getContext("2d");
-    if (!ctx) return;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.lineCap = "round";
-    ctx.lineJoin = "round";
-    ctx.lineWidth = 18;
-    ctx.strokeStyle = "#ff8a3d";
-  }, []);
-
-  const clearCanvas = useCallback(() => {
-    const c = canvasRef.current;
-    if (!c) return;
-    const ctx = c.getContext("2d");
-    if (!ctx) return;
-    ctx.save();
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.clearRect(0, 0, c.width, c.height);
-    ctx.restore();
-  }, []);
-
-  useEffect(() => {
-    setupCanvas();
-    const onResize = () => setupCanvas();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [setupCanvas]);
-
-  const getPos = (e: React.PointerEvent) => {
-    const c = canvasRef.current!;
-    const r = c.getBoundingClientRect();
-    return { x: e.clientX - r.left, y: e.clientY - r.top };
-  };
-  const onDown = (e: React.PointerEvent) => {
-    e.preventDefault();
-    drawing.current = true;
-    last.current = getPos(e);
-    canvasRef.current?.setPointerCapture(e.pointerId);
-  };
-  const onMove = (e: React.PointerEvent) => {
-    if (!drawing.current) return;
-    const ctx = canvasRef.current?.getContext("2d");
-    if (!ctx || !last.current) return;
-    const p = getPos(e);
-    ctx.beginPath();
-    ctx.moveTo(last.current.x, last.current.y);
-    ctx.lineTo(p.x, p.y);
-    ctx.stroke();
-    last.current = p;
-  };
-  const onUp = () => {
-    drawing.current = false;
-    last.current = null;
-  };
+  const [hasInk, setHasInk] = useState(false);
+  const [done, setDone] = useState(false);
 
   return (
     <div className="stroke-stage">
@@ -218,21 +158,13 @@ function StrokeStage({ glyph }: { glyph: Glyph }) {
         })}
       </svg>
       {/* 손가락 트레이싱 캔버스 */}
-      <canvas
-        ref={canvasRef}
-        className="write-canvas"
-        onPointerDown={onDown}
-        onPointerMove={onMove}
-        onPointerUp={onUp}
-        onPointerLeave={onUp}
-      />
-      <button
-        className="stroke-clear"
-        onClick={clearCanvas}
-        aria-label="지우기"
-      >
-        🧽
-      </button>
+      <TraceCanvas label={`${glyph.char} 획순 따라쓰기`} onInkChange={setHasInk} />
+      <button className="stroke-finish" disabled={!hasInk || done} onClick={() => {
+        if (done || !hasInk) return;
+        setDone(true);
+        recordEvent({ activity: "stroke", itemId: glyph.char, label: glyph.char, language: "ko" });
+        saySentenceKo("끝까지 써 봤어! 잘했어!");
+      }}>{done ? "끝까지 썼어! ✓" : "다 썼어! ✓"}</button>
     </div>
   );
 }

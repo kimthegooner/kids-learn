@@ -1,0 +1,54 @@
+{
+  "twinkle": {
+    "koVersion": "멜로디에 맞춰 새로 쓴 한국어 가사",
+    "enVersion": "Jane Taylor의 영어 원시를 바탕으로 한 전래 가사",
+    "sources": [{"label":"The Star — Jane Taylor (1806)","url":"https://poets.org/poem/star/print"}],
+    "lines": [
+      {"startBeat":0,"endBeat":8,"ko":"반짝반짝 작은 별","en":"Twinkle, twinkle, little star,"},
+      {"startBeat":8,"endBeat":16,"ko":"누굴까 넌 누굴까","en":"How I wonder what you are!"},
+      {"startBeat":16,"endBeat":24,"ko":"세상 위로 높이 떠","en":"Up above the world so high,"},
+      {"startBeat":24,"endBeat":32,"ko":"하늘 보석 같구나","en":"Like a diamond in the sky."},
+      {"startBeat":32,"endBeat":40,"ko":"반짝반짝 작은 별","en":"Twinkle, twinkle, little star,"},
+      {"startBeat":40,"endBeat":48,"ko":"누굴까 넌 누굴까","en":"How I wonder what you are!"}
+    ]
+  },
+  "airplane": {
+    "koVersion": "비행기 여행을 주제로 새로 쓴 한국어 가사",
+    "enVersion": "같은 멜로디에 맞춰 새로 쓴 영어 가사",
+    "sources": [],
+    "lines": [
+      {"startBeat":0,"endBeat":8,"ko":"작은 날개 펼치고","en":"Little wings will carry me,"},
+      {"startBeat":8,"endBeat":12,"ko":"구름 위","en":"Up so high,"},
+      {"startBeat":12,"endBeat":16,"ko":"하늘로","en":"Through the sky."},
+      {"startBeat":16,"endBeat":24,"ko":"푸른 하늘 날아가요","en":"Wave to all the clouds as we fly,"},
+      {"startBeat":24,"endBeat":32,"ko":"함께 떠나요","en":"Come and fly with me."}
+    ]
+  },
+  "butterfly": {
+    "koVersion": "나비의 산책을 주제로 새로 쓴 한국어 가사",
+    "enVersion": "같은 멜로디에 맞춰 새로 쓴 영어 가사",
+    "sources": [],
+    "lines": [
+      {"startBeat":0,"endBeat":8,"ko":"꽃잎에 살며시","en":"Butterfly, flutter by,"},
+      {"startBeat":8,"endBeat":16,"ko":"고운 날개 쉬어가","en":"Paint the garden as you fly."},
+      {"startBeat":16,"endBeat":24,"ko":"햇살이 따스해","en":"Butterfly, in the sky,"},
+      {"startBeat":24,"endBeat":32,"ko":"다시 날아봐","en":"Spread your wings and fly."},
+      {"startBeat":32,"endBeat":40,"ko":"풀잎 위로 한 바퀴","en":"Round the meadow, soft and slow,"},
+      {"startBeat":40,"endBeat":48,"ko":"꽃향기를 따라서","en":"Where the little flowers grow."},
+      {"startBeat":48,"endBeat":56,"ko":"너하고 나하고","en":"Butterfly, you and I,"},
+      {"startBeat":56,"endBeat":64,"ko":"같이 놀아봐","en":"Dancing in the sky."}
+    ]
+  },
+  "london": {
+    "koVersion": "멜로디에 맞춰 새로 쓴 한국어 가사",
+    "enVersion": "영국 전래 동요의 영어 가사",
+    "sources": [{"label":"London Bridge — BBC School Radio (traditional verse)","url":"https://teach.files.bbci.co.uk/schoolradio/london_bridge.pdf"}],
+    "lines": [
+      {"startBeat":0,"endBeat":8,"ko":"런던 다리 무너져","en":"London Bridge is falling down,"},
+      {"startBeat":8,"endBeat":12,"ko":"무너져","en":"Falling down,"},
+      {"startBeat":12,"endBeat":16,"ko":"무너져","en":"Falling down."},
+      {"startBeat":16,"endBeat":24,"ko":"런던 다리 무너져","en":"London Bridge is falling down,"},
+      {"startBeat":24,"endBeat":32,"ko":"손을 잡자","en":"My fair lady."}
+    ]
+  }
+}

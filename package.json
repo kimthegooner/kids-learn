@@ -8,17 +8,24 @@
     "start": "next start",
     "lint": "next lint",
     "gen-images": "node scripts/gen-images.mjs",
-    "deploy": "bash scripts/deploy.sh"
+    "prepare-camera": "node scripts/prepare-camera.mjs",
+    "prepare-speech": "node scripts/prepare-speech.mjs",
+    "prepare-instruments": "node scripts/prepare-instruments.mjs",
+    "prepare-music": "node scripts/prepare-music.mjs",
+    "deploy": "bash scripts/deploy.sh",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.cjs"
   },
   "dependencies": {
+    "@mediapipe/tasks-vision": "1.0.1",
     "next": "15.1.6",
     "react": "19.0.0",
     "react-dom": "19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
-    "@types/react-dom": "^19"
+    "@types/react-dom": "^19",
+    "typescript": "^5"
   }
 }

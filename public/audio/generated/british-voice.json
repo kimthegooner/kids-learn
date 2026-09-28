@@ -1,0 +1,1338 @@
+{
+  "locale": "en-GB",
+  "voice": "Daniel",
+  "rate": 165,
+  "revision": 2,
+  "filter": "loudnorm=I=-18:TP=-2:LRA=7",
+  "encoding": "libmp3lame-q2-44100",
+  "clips": {
+    "en-GB:dog": {
+      "file": "25e729804e294ec55931.mp3",
+      "sha256": "b0333619ff74bb715be5271b38f10041d06d23f9ca1e124cff1dfcc967501511"
+    },
+    "en-GB:cat": {
+      "file": "64d41a72cb6912a475cf.mp3",
+      "sha256": "e7ac48febfe9fb5477506d9aaf093fff6a41b054e7241b6daaf13ea943feb0db"
+    },
+    "en-GB:rabbit": {
+      "file": "a1e676415c540faffd74.mp3",
+      "sha256": "b2f411d17bd25c4c817c82bf231e233a9fafe724cb670343dc98b88df37f538d"
+    },
+    "en-GB:bear": {
+      "file": "8b1a2db7d2aa16cbe93f.mp3",
+      "sha256": "7d38b4224915857dffb0a9f4d22a4e274a7d493b4445829f7ef7a14120909ae7"
+    },
+    "en-GB:lion": {
+      "file": "939f593bd26b8c919459.mp3",
+      "sha256": "9b1210820fe2ad992a60bdc48c7e036076a57a0f8c9cf70e62301d5baedbf13c"
+    },
+    "en-GB:tiger": {
+      "file": "95f578b940f065032136.mp3",
+      "sha256": "34cd5b7c028300a5984107d82b857a2b3336e2db31487644bd5c882ff8bd31e2"
+    },
+    "en-GB:elephant": {
+      "file": "d8c925efb701e3cf5b7c.mp3",
+      "sha256": "6b3d8d0c7df8d91b213f477aec8664369ca3cd7d7469d4e8999171880b1e8925"
+    },
+    "en-GB:monkey": {
+      "file": "1e7311cc52d25a62de24.mp3",
+      "sha256": "18b66289f9262eed5595f10605308ee9c3b7b1e90ee6bbc5beeda7d4285fa6cd"
+    },
+    "en-GB:giraffe": {
+      "file": "0a644aab7aa30bde1241.mp3",
+      "sha256": "1f965172dfc6f58258f1f181a469a05c1a78731677a3f1ecb1486a6fac5af708"
+    },
+    "en-GB:zebra": {
+      "file": "4bef060375d92dd3e4ae.mp3",
+      "sha256": "9a3a9f8aceb6df66c49d6de1806abb4070aa61fc2217d5686f66cee2e35a9e34"
+    },
+    "en-GB:pig": {
+      "file": "49062eee85062c080b22.mp3",
+      "sha256": "b6a7490a915a5aabd0f96d3f16f0aeae01fae53cbe29c228a171372713bec81f"
+    },
+    "en-GB:cow": {
+      "file": "13c0b974ca0fee8b0528.mp3",
+      "sha256": "1589beb78eca087f4ce05d4e09eee10d03e8861974ca9f6f31789a5c0e002ee7"
+    },
+    "en-GB:horse": {
+      "file": "87b482c666fff8f50bc0.mp3",
+      "sha256": "ca81c22bf99ad63cc9e73c083ad2a6348f0c665cbb5c1f28225c7b9772a545c5"
+    },
+    "en-GB:sheep": {
+      "file": "f9df3d0d1ae59e491cb1.mp3",
+      "sha256": "3adfcf7adf9ab19828417a655c02fd69b261cd010b5ee915cc7da0f7173e7d46"
+    },
+    "en-GB:chicken": {
+      "file": "e27717f9cb4b20c20e45.mp3",
+      "sha256": "a27c6d4564e3704f48d573fe7de7d841009c0af3fade36356845d1c5ef6eea1c"
+    },
+    "en-GB:duck": {
+      "file": "b72a76c25e8433f0608d.mp3",
+      "sha256": "4c3674cc2a92c93e0a9fd5195a6add7ae51a04d2d42f9a36a561e27f8d360a97"
+    },
+    "en-GB:frog": {
+      "file": "ffffe7428cd611a89f60.mp3",
+      "sha256": "02361a3a0ea1fa7a9bb7412fe870c5c89e55cb707eabe9041c87109f12a97095"
+    },
+    "en-GB:penguin": {
+      "file": "70c97a55e7df802c3a5a.mp3",
+      "sha256": "add3ca022df19be75a1dccc2e549a4e66cc16d6d774de6009f53d04d815a6d70"
+    },
+    "en-GB:owl": {
+      "file": "e775f767297ae2bb8d2b.mp3",
+      "sha256": "172204ec85f781d64531a7e27ebfaf252056a4b687ea664f0491b70b16c38f52"
+    },
+    "en-GB:panda": {
+      "file": "579e1ad1516d1244d9d5.mp3",
+      "sha256": "bf910741f3e56b54a44afd44bd53581df3cefaaf284d0d27725516011227b03b"
+    },
+    "en-GB:fish": {
+      "file": "2136e782af53c8539761.mp3",
+      "sha256": "000396b2357647d3ed4cf7f6e36b91dd0e0cb34bab69795a09f3a6840795df52"
+    },
+    "en-GB:whale": {
+      "file": "5fb0a13df6521958f54e.mp3",
+      "sha256": "f8234e871339b25ebea6318403bdb647b904e97e9e239043a7928642d2f1af3e"
+    },
+    "en-GB:octopus": {
+      "file": "72822f496b2b9b419a6f.mp3",
+      "sha256": "459d939acfbd26e9aa1208fae728bcf7deeb8cc47aa85f6fab8b07f843c12d77"
+    },
+    "en-GB:crab": {
+      "file": "24daeb8528e8e57b951a.mp3",
+      "sha256": "267b3076a8ef6af7d81883bc0bf35e1f8dc41575b9e3b36db934c6dcee1944ce"
+    },
+    "en-GB:turtle": {
+      "file": "1eafc199ac0ac01b6b76.mp3",
+      "sha256": "3e83c8996ad9525a11a4a8ec36b2b76a4b0235c8c403210a26b6f55226156349"
+    },
+    "en-GB:shark": {
+      "file": "0bae17775bf76ad0852d.mp3",
+      "sha256": "3e60f34f8475dc9dad9a7c21071b8ff3e9e1d70c4f38256be8716c4694d1d751"
+    },
+    "en-GB:dolphin": {
+      "file": "bb7daa36c5145a0af770.mp3",
+      "sha256": "28e318b6cc1d26be78f752263e61d39265a06f6b9aa8104841a4d8bf36f71858"
+    },
+    "en-GB:butterfly": {
+      "file": "7960b61834a4640276e3.mp3",
+      "sha256": "ef1b0c7f966eedf90bb5e1f6a684efa0f3d13050180b47c35963a9f6b05c16ac"
+    },
+    "en-GB:bee": {
+      "file": "56d2f77035a652d9aeda.mp3",
+      "sha256": "f5ef65797aa40697e0f1405978b8f44e8e648c02224debb0e7148ab644b0f5ab"
+    },
+    "en-GB:ladybug": {
+      "file": "ff7cad88d87b8d5eab58.mp3",
+      "sha256": "847df658c581d5d4795c797fab4bfd5dea639a6c40408d36b98a057c71c8d959"
+    },
+    "en-GB:apple": {
+      "file": "b8aacf7b179f0a9ed890.mp3",
+      "sha256": "771ca15d2a6f98039e0279f44b63bd1a0c16b480f74055fb0397cb48550d9218"
+    },
+    "en-GB:banana": {
+      "file": "f8ac740b03222d7255c8.mp3",
+      "sha256": "dc783b2c2126468a27f1bfc303f307b42687cb0ec9ccc3f9b593e3c895955725"
+    },
+    "en-GB:strawberry": {
+      "file": "a329a2b131211548d2c9.mp3",
+      "sha256": "5399c5e60b6224495308a4dfe8755d564f5ceeb7dd59fe4108162ce3379ea70e"
+    },
+    "en-GB:grapes": {
+      "file": "bce0f601fde66fac3e37.mp3",
+      "sha256": "cfcb11c2b619227e4d387762f81e114e627e3d64f7f49d01aed1d1cd7814b697"
+    },
+    "en-GB:watermelon": {
+      "file": "b6d3da99ddd70a3390bd.mp3",
+      "sha256": "3d5da07b95807328787922ec289b432317bdd281cd426087a1d1ff8d2b9b0796"
+    },
+    "en-GB:mandarin": {
+      "file": "fe8acc7c7d56846fa219.mp3",
+      "sha256": "fa49895d98d56c4da5f1ecf268caa08c50feb6f15d7ce7fcb5a7541f530843cb"
+    },
+    "en-GB:peach": {
+      "file": "a00cf8fbc4b50714d965.mp3",
+      "sha256": "2290e9cf9850159e54e16b8940fc8f3b02d2095e8692b3a6cde6acadbe802a6f"
+    },
+    "en-GB:cherry": {
+      "file": "941e8d54bdd3186f1015.mp3",
+      "sha256": "bddf9b87a224ec31ac53723dda87f2004190b81fba3922cbd1eec593957f1e21"
+    },
+    "en-GB:pear": {
+      "file": "8f76557ab85cfe38c1d3.mp3",
+      "sha256": "4828abb23d95574eba5eafd79617363ef6403c64bbd60baaa461e6859d9aa4ae"
+    },
+    "en-GB:lemon": {
+      "file": "3c65156cf4a7011155ef.mp3",
+      "sha256": "2cf50824bf66fc6a019ae811c7eea36ce156e720232a62862a3719f7cbc8264f"
+    },
+    "en-GB:pineapple": {
+      "file": "ddc1c26cd36fcc038a34.mp3",
+      "sha256": "0a170acaa250bef4302175958d6d59ce6e399724bc32f66a66d3cfe9744605ac"
+    },
+    "en-GB:kiwi": {
+      "file": "87433399faf5f384c7e7.mp3",
+      "sha256": "b2b065da5706b470fa656be74d399c517e82ba1182437fae597a162908002723"
+    },
+    "en-GB:bread": {
+      "file": "2ece262be6e5db14f351.mp3",
+      "sha256": "713e7e4450cab83393d679172bbf371cdab4b6f88119b6153e7fa24ed29a6ae5"
+    },
+    "en-GB:milk": {
+      "file": "1fb54321cd1e88c16536.mp3",
+      "sha256": "7d7e88762a6beb520cda5d1381606e486b7c9e3689247eca877eff1d3d1fc7eb"
+    },
+    "en-GB:cake": {
+      "file": "453344d4c2fcbe78560f.mp3",
+      "sha256": "857630819a32bdaf485d33fa734c868adcb5c6daccf4c51a5a367b7b1ab08a42"
+    },
+    "en-GB:ice cream": {
+      "file": "6ee5bde72231475605a4.mp3",
+      "sha256": "4dfc1cb0f9f7009b2d9f39b37fbf37e1cfd8f33dc98affc88aaa508113b822aa"
+    },
+    "en-GB:candy": {
+      "file": "b03b2c5be9ff9703486b.mp3",
+      "sha256": "3ae40d3535262753dd4b6174db91951770912a72d7eb86c399b410b6db9851a2"
+    },
+    "en-GB:chocolate": {
+      "file": "c91eb939c52c56d38730.mp3",
+      "sha256": "8f0bd066169100218d80a0219c62f200581b0b75908c0a1775ccfba226395ee4"
+    },
+    "en-GB:cookie": {
+      "file": "53a41a96919e8d5bf9be.mp3",
+      "sha256": "7d5653ee4a8cd5fa19219b92108a63039799a56eaa17ab8193ab26436ce43f66"
+    },
+    "en-GB:pizza": {
+      "file": "899758529f16259ad20b.mp3",
+      "sha256": "17615decf6eb835ab2cca0ab4447dbfe7cbec019553eb717d1fe67703d6cbd64"
+    },
+    "en-GB:hamburger": {
+      "file": "0398a4ece332cfe189f2.mp3",
+      "sha256": "d2a03a982179c5cbacd5a40721ff989a2ec1bed0fff6956bceb70046c71f3a6a"
+    },
+    "en-GB:egg": {
+      "file": "9b3467a0a74ab62f6a95.mp3",
+      "sha256": "1bf7dc77bc6156e7a14540620d98972c0fe9e1b36063d2292ec39877bd06a116"
+    },
+    "en-GB:cheese": {
+      "file": "26f1b37d773bd46aab42.mp3",
+      "sha256": "6342d3e1a9214356854e38ea4b80dcab110a385029d98ab22091fdbe07c4d33d"
+    },
+    "en-GB:corn": {
+      "file": "93c1dc1f1adb3e1b9327.mp3",
+      "sha256": "31787dde86f2c02b3de7d180c77b4d299379bfe9123930e62f298237eda50aad"
+    },
+    "en-GB:carrot": {
+      "file": "91e5d20230b362c59f7f.mp3",
+      "sha256": "7bd40d468c6b870d59ce89f3a129711e5c306e1223b81214139e1fc2efe19141"
+    },
+    "en-GB:rice ball": {
+      "file": "7eec263a321a258adbf9.mp3",
+      "sha256": "7a558cd55a04305089aaa215894581f6f9d85d28a67fad17293b5333bda1e55c"
+    },
+    "en-GB:car": {
+      "file": "c31730ff447275823d3d.mp3",
+      "sha256": "8c93532ee7c5805f997a3923a87a0263181daeb4ae501a3a8c2a8cf8b68bcef3"
+    },
+    "en-GB:bus": {
+      "file": "b168f37e96d34eb1259d.mp3",
+      "sha256": "f570dac5cb4e27703b0d43f986fd5ac1cd46e0b96ae32dfcb20a5d3bd21981fe"
+    },
+    "en-GB:train": {
+      "file": "c09c7cac5296145b99eb.mp3",
+      "sha256": "d44b8a38b7d11eff36b09ce75dae0778871c0319597b31d487854ee83108879e"
+    },
+    "en-GB:airplane": {
+      "file": "3213779a0d6c427bd33b.mp3",
+      "sha256": "8e4ead38a23a5e66130f38790fabdd153aeb7f20a60e9b03fc07ab602f9e572d"
+    },
+    "en-GB:boat": {
+      "file": "6185d2de662edd33453c.mp3",
+      "sha256": "1c9e8bd9391ef8aafc9d59a24783581e74776369b3520c875ea4bc9880d458ee"
+    },
+    "en-GB:bicycle": {
+      "file": "c11e08fef97a2ceda05e.mp3",
+      "sha256": "8a45c15d0416e40462a204772b947afdc2155841b4f7fcc6964bc136047559e5"
+    },
+    "en-GB:fire truck": {
+      "file": "4ff40062b50198cb4727.mp3",
+      "sha256": "8f8c6923981f89dee06f93ef185e26f1fd0db22c1084d44c6fe5f23ff38f9245"
+    },
+    "en-GB:police car": {
+      "file": "a1a62ebfbb683d80b8ea.mp3",
+      "sha256": "bb8c4593244eba324eac1966d737e8a0452a781ad1bb4af9f573b38754697ef1"
+    },
+    "en-GB:ambulance": {
+      "file": "eeb7a53ae872c1d9d189.mp3",
+      "sha256": "07bf0528579486e93b677a158a6eda50314d1c4460fdc290c1587a5abb79c5b8"
+    },
+    "en-GB:truck": {
+      "file": "970c4bf2b0e98d40904e.mp3",
+      "sha256": "6e28346e62c72d966e6907690ef065f15d85260c6764f2fe74295293693adda1"
+    },
+    "en-GB:helicopter": {
+      "file": "1655bd40912a7e0b5b81.mp3",
+      "sha256": "5262d9300d167441a92d8327d1701b61613fa09f798760419d30565454ff8699"
+    },
+    "en-GB:rocket": {
+      "file": "a5a21ac2baa0f7175e92.mp3",
+      "sha256": "9c328c2a454eacdf458469b624809ff533d3e7413783c85abe79d6dfd5ab1a03"
+    },
+    "en-GB:sun": {
+      "file": "7221e6585912f2ac79a0.mp3",
+      "sha256": "a9f528424e2d8b8c3377bb7ebd285f8aa6c6a93e8bdd8afcdbda325a5ad85d4b"
+    },
+    "en-GB:moon": {
+      "file": "1c3dc46f77c238d2fa44.mp3",
+      "sha256": "7c50985c96125c920a785c7bf8bbf9f90d70a13d9183fdb4b8981590ec634877"
+    },
+    "en-GB:star": {
+      "file": "ef3be3042f468be472bb.mp3",
+      "sha256": "f010d4c98a9d8038124d3e1193b3921fb4af61123d17e3558f1d804a3e2d846c"
+    },
+    "en-GB:cloud": {
+      "file": "3328d0df8ac3f123500d.mp3",
+      "sha256": "da2dfc4a490e24a4a176a3883d89b0036ba387e57c0bc6693025707037156708"
+    },
+    "en-GB:rainbow": {
+      "file": "f230c50bd87f1cfb24c8.mp3",
+      "sha256": "e6188d191a894e8e4e61927ac5ae1dd6a28d0f44967fc4139a09ed3ebe1c6a22"
+    },
+    "en-GB:rain": {
+      "file": "18d196b3976c3ea05eb5.mp3",
+      "sha256": "bc5d50659262279d009e0e0f8f6718d9bf282208c0fa13b3d566c0a316282ef3"
+    },
+    "en-GB:snowman": {
+      "file": "c6dd7cfe30255893ddf0.mp3",
+      "sha256": "b860dd7974bcf733d5a41f0966ab93c88196c60dbc727c73c66e778d8061e875"
+    },
+    "en-GB:flower": {
+      "file": "c0e8d79d9d7a2ee6b96e.mp3",
+      "sha256": "acae4d753d3b196e282bf4cfe5ef3da0adee1129e657dbf8a93fe0dee16a132a"
+    },
+    "en-GB:tree": {
+      "file": "65fac7ea57c908abab31.mp3",
+      "sha256": "35d87557d4d15a674a72255a7dc2ca7aee8089298b5df15183365781379a8d45"
+    },
+    "en-GB:leaf": {
+      "file": "c1922dd427dfcdfa6478.mp3",
+      "sha256": "636657077545d23469685e3170639500cdefbfbc9681f2614e7266a5aafc30bd"
+    },
+    "en-GB:fire": {
+      "file": "d0f1a19c86b6c1f56634.mp3",
+      "sha256": "7a57cd57f4b5519c3fcafac78d7e209bdd73fda24d567ba008dd360d92eb5384"
+    },
+    "en-GB:water": {
+      "file": "1c605b66e77d17c3576b.mp3",
+      "sha256": "9d8d975da896c88a614a8d04ea6b830205272cbbcf0dcebf1d58895aea77e853"
+    },
+    "en-GB:hand": {
+      "file": "076905f169a8afd50fe6.mp3",
+      "sha256": "ce147ed747218db05bdddbf1ff8a55d4c3c05388350d6997eaae4fa8ec387682"
+    },
+    "en-GB:foot": {
+      "file": "714cdb10b8d6a1dc2411.mp3",
+      "sha256": "ae4c1ab4ba67f6a190a05eaef0d5fd4be31e3a1120efdbd862f838461a998c7d"
+    },
+    "en-GB:eye": {
+      "file": "363b6bc79a2abc8857d9.mp3",
+      "sha256": "f67070fe30164d23d5e40e221573518c48a5c546ac512e23f0b802b76f14af76"
+    },
+    "en-GB:nose": {
+      "file": "16638d6391b00b1fccda.mp3",
+      "sha256": "f20386bb734cf52de96ba0a9773e55fbb9d2be96391f7c79fac231c12c7a36f9"
+    },
+    "en-GB:mouth": {
+      "file": "3112af1b39b128da43b3.mp3",
+      "sha256": "2bffda4200f1830fe2d8449ba11735ca123a37b1d77628fa512be9c3093cac6f"
+    },
+    "en-GB:ear": {
+      "file": "9339bd03c6cbe254bd78.mp3",
+      "sha256": "fdf9b949ec452ed4f2c7f8e6c2c7b20a17dc88ec040d8bf139550fa2f55efee9"
+    },
+    "en-GB:tooth": {
+      "file": "278d36f3c117bf935e01.mp3",
+      "sha256": "e1e1cda1894268a109419876620c9e1ac6d59d9abd3f06e68556c9baa6b0eae5"
+    },
+    "en-GB:tongue": {
+      "file": "e788b9cdbfa8ea41736d.mp3",
+      "sha256": "79d9fead88b1c158322d59e761948bf03a6f600d15d80b64bbccba4517547048"
+    },
+    "en-GB:house": {
+      "file": "ca3e7764df150ed3da6f.mp3",
+      "sha256": "1c6f99ba66d83bf71660db27620df5b6fb024991b568b491e2ccc1f6800dd679"
+    },
+    "en-GB:chair": {
+      "file": "8e516326bb68c0fe9947.mp3",
+      "sha256": "35f0010a2dff8b4b72e4578a583b0d068e93be2f49b0c763d84c3472e3b2add8"
+    },
+    "en-GB:bed": {
+      "file": "33e90f2a853d3b868d9d.mp3",
+      "sha256": "e7b705c8e144934909495cb965981660b02ba80a88381827b2f20b5ce77cfca7"
+    },
+    "en-GB:clock": {
+      "file": "8ca6d5021c7ab5f1556a.mp3",
+      "sha256": "7412ae7151445688fb138647281fd7eef78967c00bffe72f5a645b2dae3ed77b"
+    },
+    "en-GB:book": {
+      "file": "7f075b94374f543741ec.mp3",
+      "sha256": "23ec32f123aa0b3be932b4c7aff405670573f0d677ad6260764b82114842359d"
+    },
+    "en-GB:pencil": {
+      "file": "115d27b798dc1cad37c2.mp3",
+      "sha256": "08dd9bd56805dbab04f97791d3d5b12b4c465d86dff271bbf116ff50d3eaf3f4"
+    },
+    "en-GB:scissors": {
+      "file": "8c823733e2ba640033dc.mp3",
+      "sha256": "3fccec78033e9d2c6564e22e1c1a554de791105b79dc9cfd44de09f74dd82f15"
+    },
+    "en-GB:umbrella": {
+      "file": "15eab5051193fbe727a3.mp3",
+      "sha256": "25230f72af3a061b3f4bd9380b5b859e215d19a99a368018ec4600bdc2f03d6f"
+    },
+    "en-GB:key": {
+      "file": "f76e9d3de39cf0e45281.mp3",
+      "sha256": "cb6fd884f75943c0ed79fb5c1916445ec9c47891f5145ab34f09749d170a431c"
+    },
+    "en-GB:balloon": {
+      "file": "7befaf110bdf487a30a8.mp3",
+      "sha256": "ae95a1d68a3429ab48f4b4298bdeb5a50d661cc26975cad52daa070377defa6d"
+    },
+    "en-GB:football": {
+      "file": "65b05a9d1d8cfd0570a2.mp3",
+      "sha256": "cff6aedc98eda7642b23edf9f630cd6d3faa022df5be7dfee5c74efcebc5655b"
+    },
+    "en-GB:teddy bear": {
+      "file": "d1a071bcf3298496bd86.mp3",
+      "sha256": "b59350e4ea3c46f02e983867be9ab49d82345f4a5c3f2a7c255fdc12850200c7"
+    },
+    "en-GB:Bukayo Saka": {
+      "file": "619b2cae9d8ea4ce4276.mp3",
+      "sha256": "bfe5400635fcc4193642279c2b70b01a32d19b7d9c5c61696443780717c4a8be"
+    },
+    "en-GB:Erling Haaland": {
+      "file": "29519c744160816d2c44.mp3",
+      "sha256": "2eed87eb79dcc260123872c4b03065d5c1cd90901ab05434d96bc87c54c84be0"
+    },
+    "en-GB:Lamine Yamal": {
+      "file": "293f40a4e7b2e66ee418.mp3",
+      "sha256": "d7dbe781f9473bf1aa2f444d9cad9baf9f01a094e68f9bfefcd4e52f1129f0e3"
+    },
+    "en-GB:Arsenal": {
+      "file": "b86d00ba6c074933431f.mp3",
+      "sha256": "4df94658c23cfd2435e6258b9e2d8950933756a805947f4ffb7426bbdd248539"
+    },
+    "en-GB:Liverpool": {
+      "file": "f4eda1de3da11ef3c24a.mp3",
+      "sha256": "cf4e91e669621340a691a284fdb960dff5d910aa2ea4224301165c2b70a1865d"
+    },
+    "en-GB:fox": {
+      "file": "08d400610cec7a62afaf.mp3",
+      "sha256": "61747b4f620b29cdf4cf230791038c3fc108e75585af02de3774ac8dd860a389"
+    },
+    "en-GB:wolf": {
+      "file": "04e7bbad69ce907a34c6.mp3",
+      "sha256": "e27adb0c416600fe5ee1344c04655b21138b30ac9138a13bfada4efe8f46bd3d"
+    },
+    "en-GB:koala": {
+      "file": "d8658f82c1f4b00576d5.mp3",
+      "sha256": "355d4269b10eb04c775274e90f4363896047f896df627aeeaff6fb148a11f734"
+    },
+    "en-GB:mouse": {
+      "file": "22bdcfaec9bc5f08572e.mp3",
+      "sha256": "2979b53dceb108c4be79455f939f99f10bf55a92cc8ec1bed0986fed4002469f"
+    },
+    "en-GB:hamster": {
+      "file": "f3b4eba335476ac5af82.mp3",
+      "sha256": "8a32fa0ed5ec4c8609734547398a4014061863f336acc49f9e5bec727ef28c15"
+    },
+    "en-GB:squirrel": {
+      "file": "88ad228056be1b33491c.mp3",
+      "sha256": "03d52029e29db71d9748e01f80c579bd3f1d997226d692b75dd40357bb682c90"
+    },
+    "en-GB:hedgehog": {
+      "file": "0c01aae9a18d501714a9.mp3",
+      "sha256": "a8e72a71346c666c2d43ef8bdddefd05c87dceca8d8053e49fff4eba100f625d"
+    },
+    "en-GB:deer": {
+      "file": "a4fb00c74a602b8f9743.mp3",
+      "sha256": "3169418c3ea6628faa29dcb19afe4c9348998f0067838713822639614060af51"
+    },
+    "en-GB:camel": {
+      "file": "c079ec00664d21df4c77.mp3",
+      "sha256": "5b23b50879f7704cc756bba83685ab72629af411f6f9ac48f1dff3082c5357bf"
+    },
+    "en-GB:rhinoceros": {
+      "file": "9de344db0fc4c448ce2c.mp3",
+      "sha256": "b12f93440edc414e4fa721a85d532390d5c0f7a29c7324947b940f88a9cc54f1"
+    },
+    "en-GB:hippopotamus": {
+      "file": "769e2db76ea9ffd7195f.mp3",
+      "sha256": "ce250c0ca1c1495c7fb8494eb48c3f41ac673312064a1cd0d868e0445bdc56e1"
+    },
+    "en-GB:kangaroo": {
+      "file": "910d3821040a899df3ce.mp3",
+      "sha256": "a66c815df99511760f99a619fa4ffbfb4bd34a18e4d897e6836e4413508b6b28"
+    },
+    "en-GB:peacock": {
+      "file": "3c1f4e3118db4eda2065.mp3",
+      "sha256": "839fa1405b107c9944286a92bb8138e44ac1760442c320d487de7c50cbc9207d"
+    },
+    "en-GB:parrot": {
+      "file": "dbf173639f533ee80f69.mp3",
+      "sha256": "e3b0346bf3d570d30e37604bfa91c5967c997770916440166cc527b2cbfd9e22"
+    },
+    "en-GB:bat": {
+      "file": "fb7fbfd397dd40ea3344.mp3",
+      "sha256": "6c8be002b9fa1304bddd1cacf009082c04bb920c114e90ea33db1a1a47554bba"
+    },
+    "en-GB:otter": {
+      "file": "82c211f804cb9ec45191.mp3",
+      "sha256": "c9354d6bc2385b0c4e6766e13efbfeaf87b7cb285ef828626b1d8020c0e6bba1"
+    },
+    "en-GB:squid": {
+      "file": "40c8f87eafdfcdb91fad.mp3",
+      "sha256": "f0135297721f52d009b150bef3d7c9afa3cea8612d4bb361df93f1c54593ccf4"
+    },
+    "en-GB:shrimp": {
+      "file": "64fb310c0e387681e500.mp3",
+      "sha256": "556eb76b3ab5ca40dd59bafd0ef311d1fd0d208defa5c734e8db5790dec56ab9"
+    },
+    "en-GB:lobster": {
+      "file": "1b7a2948d52f2d0cff1e.mp3",
+      "sha256": "dcdb7e482f5a06e1054ef9bd43c3e74ce26470c475b234f26048d6d14dc197ab"
+    },
+    "en-GB:seal": {
+      "file": "d38b2735ff8634c5a95f.mp3",
+      "sha256": "1d03994bfe8f9e279d0dd039ff183d3e44106ce457f2e2a2198052340cfbf72d"
+    },
+    "en-GB:jellyfish": {
+      "file": "d27eca22fe7e9ee0a999.mp3",
+      "sha256": "65ee29c927f4ae4eed4a372eba41ee9fcdf58490594239ea1b52d81c7cee71c1"
+    },
+    "en-GB:shell": {
+      "file": "ec7055b76380bfea866a.mp3",
+      "sha256": "fb7449f4cede5261466b567638346138f415bd8ec3ff3fd92ed78e20dac37a98"
+    },
+    "en-GB:oyster": {
+      "file": "d30e6816cc011b6ac92e.mp3",
+      "sha256": "19b8c86dbddf38e53535966d6c96dc451d0b608b8aed804776e6ef4823a79317"
+    },
+    "en-GB:mango": {
+      "file": "6b9ebcfa26fde4ddbf83.mp3",
+      "sha256": "33ab695672593d95cde6d403216f520d571b485a554dc3b73172a3d46f142ee1"
+    },
+    "en-GB:melon": {
+      "file": "d8f994f1ccf0516bb208.mp3",
+      "sha256": "b3344f000b89593bc4eccdfa6d0aa938ae9e040c1fca2169b02737c0900ef40c"
+    },
+    "en-GB:coconut": {
+      "file": "0527ff69f42b411d4650.mp3",
+      "sha256": "e913d153fbd358da37924aa0632055a9c5bb0356c3e8a2508083dc9f2680ef89"
+    },
+    "en-GB:blueberry": {
+      "file": "02c244b1f3c7c488571e.mp3",
+      "sha256": "a670c94a404afe3ca0d05b9509475535d837b880888bc5c84b1a8a784d02c745"
+    },
+    "en-GB:broccoli": {
+      "file": "8d09f98f04840664d00b.mp3",
+      "sha256": "ba8444d3cae3cfd1ec4fb57acd975dcb54dbf550b1f0e18e706dd1e1045d44ee"
+    },
+    "en-GB:cucumber": {
+      "file": "5ba1cc721244369fc784.mp3",
+      "sha256": "e883f01cf297c0e3b83569d24702956731dda8ac12f56fc15d9dba72cdbaa2ac"
+    },
+    "en-GB:aubergine": {
+      "file": "67740c995a1b6eb50616.mp3",
+      "sha256": "82cf9f59e9e220071c459828970fa5f6bf756136b42c3220cf86a5065e9c18b0"
+    },
+    "en-GB:potato": {
+      "file": "a004aa3d0dacf32b3477.mp3",
+      "sha256": "4e877d05633930fc243eb40fecaf649acba152cb2eba02e48da941632c72b4e8"
+    },
+    "en-GB:sweet potato": {
+      "file": "6113be2f1d6dda02f97c.mp3",
+      "sha256": "752de02125040dd0b2bcf263836b03bd490d8b880533221de03b107ae3c2f83d"
+    },
+    "en-GB:onion": {
+      "file": "df6307e140710b45f90c.mp3",
+      "sha256": "18e8854cd2eb64441dd2266aab9ebf73c3b4343f231e3a1e4c76151305ef8bc8"
+    },
+    "en-GB:garlic": {
+      "file": "c7a8bb3a02b3d9ebf57f.mp3",
+      "sha256": "03930193fc70fc3d0545f7ad383e9ebb18f645e58c47f18f6d70eb4c72cd3bcb"
+    },
+    "en-GB:tomato": {
+      "file": "99479c18db043eff221c.mp3",
+      "sha256": "c63aa5c21d9a6d26c06cd9ae363b890b4c5cfbafe78a416f9a9daf3dcc620f4a"
+    },
+    "en-GB:pepper": {
+      "file": "d385cf898f130c04fd63.mp3",
+      "sha256": "d14bb4038172126ced9663c69bf26a51bb8b33b72f1f755466e3fe720836d874"
+    },
+    "en-GB:mushroom": {
+      "file": "1d9b8c2b6dd06713e4a2.mp3",
+      "sha256": "315dc90bb57abe8b18778e869f7ab8c53f026fa959fbb744ab939eedb6c39e7c"
+    },
+    "en-GB:rice": {
+      "file": "f44dc2f39f12f2a7d549.mp3",
+      "sha256": "a97cccff232b7f6ba9c495c4675c445993265fcc87f799b504033c6edf1ea77c"
+    },
+    "en-GB:noodles": {
+      "file": "e94caccc27906bc534d6.mp3",
+      "sha256": "aff77dc119ba93560c07478db3393f8ae2369fb11fa0454a3998b91ce4c7739a"
+    },
+    "en-GB:dumpling": {
+      "file": "b0a8592de0b89050ddd1.mp3",
+      "sha256": "b99939b7d54cc26db98a5afcc6beb9eef9f141f4e7c83966cca6ee339ba0d1b9"
+    },
+    "en-GB:pancake": {
+      "file": "6edb533dfb6eb381b948.mp3",
+      "sha256": "aa7dec2fe0078af766770aa2b07c3d1a863cb7be994d6fa04a7f07b57ddf4d7b"
+    },
+    "en-GB:sandwich": {
+      "file": "5a119d4aa55304ae807b.mp3",
+      "sha256": "86caa6d955bf93ff23f7e0231a905e416a389e797597ff6f4e1358cbf516d88f"
+    },
+    "en-GB:doughnut": {
+      "file": "4d50e9cd5931d224f8c5.mp3",
+      "sha256": "be61bb89410e0c9e600ea7bc8ed32ff779bdba12d587c92bc071035acbac7a53"
+    },
+    "en-GB:popcorn": {
+      "file": "753ea02c4ff6f538992a.mp3",
+      "sha256": "abaacadbdf81fd986b37b66a9633c112e54389b083a7fdb76f84afd479285570"
+    },
+    "en-GB:honey": {
+      "file": "15b56fd434a32886daa0.mp3",
+      "sha256": "5f90c21369ad761fa3af5f7f1a56535195fc7e0efdd59c92cee6bde449a15049"
+    },
+    "en-GB:butter": {
+      "file": "101d035bcb686ef245db.mp3",
+      "sha256": "f15577433a21e945f9b89e0b97017c83581fdf4b34b6f5ed4434202a31580f57"
+    },
+    "en-GB:juice": {
+      "file": "a34aecfd22b70e6ee47b.mp3",
+      "sha256": "2e292b6bd90a3054b5386634fcacd5a5cbb3143ae02b3fa348235f1697bf33ea"
+    },
+    "en-GB:tea": {
+      "file": "7c5b6eb55f2f36e4f12a.mp3",
+      "sha256": "ede297554d7f70b9c19b192d2fd4a18caaf85c63bb85e8752b379e0ea8b53cf0"
+    },
+    "en-GB:salad": {
+      "file": "5e10e5e5b0c075256500.mp3",
+      "sha256": "f74aa94aae9eac52a43640dda1142f3c7f427cd32e9d2e97ceaba48d12a819ea"
+    },
+    "en-GB:ant": {
+      "file": "29f12fefba6bf9d665ef.mp3",
+      "sha256": "ab2cef353113f99f8888613b37842e877b75cd1a9eb92d8abf543a2dd6cda693"
+    },
+    "en-GB:snail": {
+      "file": "738085604f1e29c50b36.mp3",
+      "sha256": "3ff7f3232203988da323683be5539550af109633483b311a4c6fe1e4fc142039"
+    },
+    "en-GB:caterpillar": {
+      "file": "93f54613addcd8ea86ba.mp3",
+      "sha256": "f171be8e24070a076662e4fb5fac3c39c072e6c5303b5e1613a195e049811ccf"
+    },
+    "en-GB:cricket": {
+      "file": "24b8f9a9cfc7619b7269.mp3",
+      "sha256": "6dd4f069563eabfaf9d53a70152f92f6210f1f9b806074d36ddb27aba86b09d8"
+    },
+    "en-GB:beetle": {
+      "file": "07c8bea4987630e56ae6.mp3",
+      "sha256": "6c175d0e932a75f212df95b25d2a216a34f13a43a41c254761dc5438861de139"
+    },
+    "en-GB:mosquito": {
+      "file": "1298444e2eca6de02f02.mp3",
+      "sha256": "d963f6e2c6a08385f0b903868c0ef8a66433b4a9e435868a73063add1b52e50d"
+    },
+    "en-GB:spider": {
+      "file": "70f069bc0bc84dcbda99.mp3",
+      "sha256": "f45bd16f5452a92ec3c5488a1a71fbb73f03a967ab4d50ee3d39a2a0f629024a"
+    },
+    "en-GB:worm": {
+      "file": "f4f962bacf452bf87b09.mp3",
+      "sha256": "7222474ba0252740c99634c387b511521206e7f0a1babc47c9b225b5a51eb082"
+    },
+    "en-GB:fly": {
+      "file": "65d3f13e7d1de4736d19.mp3",
+      "sha256": "058ba73d10330b25898d22b083d65e26e3492bd73cbca98cbd1ef02c0368bae3"
+    },
+    "en-GB:scooter": {
+      "file": "89a3398e6e0cd43fa81a.mp3",
+      "sha256": "b4043b6cb3a7c1b7ebce5df198a242eb426190cb5942b16003706226a6db22de"
+    },
+    "en-GB:motorbike": {
+      "file": "3b62badd229044dd740c.mp3",
+      "sha256": "12b0cde61a19bf15f45ee1014db3c366b670a2b67d1cbd6564d190d86221e637"
+    },
+    "en-GB:taxi": {
+      "file": "3081a637c552b5e3843d.mp3",
+      "sha256": "42205eee64c5824d3ce32094ef9b0d453d6d4df6d1fdebd0305d9341a980bbf6"
+    },
+    "en-GB:tractor": {
+      "file": "79f4d38380673aee648c.mp3",
+      "sha256": "4e51d34076060d29b7652463a9de95014d554243fdde69604e90d00698aae86c"
+    },
+    "en-GB:tram": {
+      "file": "901e93110a98c74db84f.mp3",
+      "sha256": "f462cf95fc27d8ca20adce5965422b98767312bb84a866129092a7419294decb"
+    },
+    "en-GB:canoe": {
+      "file": "9b70af6f5e59372fce1e.mp3",
+      "sha256": "1fd541d89704de75535360ecdca25d5e586014137ac96b54c04369b51c12309d"
+    },
+    "en-GB:passenger ship": {
+      "file": "b5832d3e47335bfdd3ab.mp3",
+      "sha256": "4ca9f008ba37559795402a23e48a962b7441b7467c1e70867e145e575fc2f661"
+    },
+    "en-GB:cable car": {
+      "file": "339f4ddac0cc421ba4d4.mp3",
+      "sha256": "b1670051328c1f2d6c01e5521135012ca1a06ca2bfb693438d9557f26b2e6729"
+    },
+    "en-GB:mountain": {
+      "file": "931e2e75f44f6c6fa31b.mp3",
+      "sha256": "b6ad7cbe24268991d21c02f6a61834d545eaf2614d746cf272741f444d9106b3"
+    },
+    "en-GB:volcano": {
+      "file": "f9f987bf5a596566b896.mp3",
+      "sha256": "7856fc5b770a38ed9f92bb37a3d611d8dc51a8a3dc20231a2ded438797fce77f"
+    },
+    "en-GB:island": {
+      "file": "ea33644003e21fefbccd.mp3",
+      "sha256": "5f9c95155c8150092cdac47b3a517581ee51f639fb5d3d79fd607a9e525cc189"
+    },
+    "en-GB:desert": {
+      "file": "bebff573cbc1b87d5a6c.mp3",
+      "sha256": "dccd320f3b1cf393009ae022922e5f01f7e4685a183fcdbcb789b46b8eed9fe5"
+    },
+    "en-GB:snow": {
+      "file": "0d935c2e60620f170d22.mp3",
+      "sha256": "2cdda478894377efbb6529674b7e84156d1288640d1ff839265b84ee3312d56e"
+    },
+    "en-GB:lightning": {
+      "file": "64184f21c26239ef4cbc.mp3",
+      "sha256": "aa18bfcf54f2010a3211a7daeefbdaf9418e7c10fe6aa5596af3b1cbdfe522a3"
+    },
+    "en-GB:wind": {
+      "file": "407a8a85f378fbbd8511.mp3",
+      "sha256": "620ff3a64576e0eab3e48d83cb9c2640bff1b9414b4536c32b05cddfafc5d18f"
+    },
+    "en-GB:rock": {
+      "file": "6e1f72de3baa0ca6e259.mp3",
+      "sha256": "3bdefe370d19bb89909876ed1199c04330befe5ab62cf886f460c89c7befc413"
+    },
+    "en-GB:sunflower": {
+      "file": "653a6c070c3328cec8a5.mp3",
+      "sha256": "43c483ebf16e18f469a15b0f4bf893b0ad83a8793b301ddae9fb4ad56dfd28cd"
+    },
+    "en-GB:rose": {
+      "file": "8fd657e43791edc2fc8b.mp3",
+      "sha256": "8cf75a3e84ebf2027703b2cf962068be2a06acd54da90155cb8929f1c065025e"
+    },
+    "en-GB:cactus": {
+      "file": "02a190e663f6cb3d1298.mp3",
+      "sha256": "562c847e91aec261f5a3cfec436f33de2272c52864e551f6b14e160cb18eef9a"
+    },
+    "en-GB:pine tree": {
+      "file": "336a110cb317c12aa0d8.mp3",
+      "sha256": "5303a59a3d616d26487cf3fede333c2f578d1e5abed9d00006448803525369f6"
+    },
+    "en-GB:arm": {
+      "file": "35a5373b43431d869460.mp3",
+      "sha256": "8205d5470b6d1f42da792d6fda3372754637e2ef3c05074ded8c37478858ab2f"
+    },
+    "en-GB:leg": {
+      "file": "1fa780d7febbd1c325d4.mp3",
+      "sha256": "9206ced8b178cb9d905889ce257934f9e034c412a8de33622391711a9d4dac92"
+    },
+    "en-GB:brain": {
+      "file": "937e2a314d2f91e97b92.mp3",
+      "sha256": "f9544bbf543b3abcd62e0d1e48fbd78cf3ab20f9132eca0e3c3655d1b0a83b2b"
+    },
+    "en-GB:bone": {
+      "file": "dff95232d9e6ad07122c.mp3",
+      "sha256": "d9c7065bdb28864aa2011c0154fea3acb3af4736736ac2b7c2b77e2494b19ff0"
+    },
+    "en-GB:door": {
+      "file": "ee705160cd35d863f51d.mp3",
+      "sha256": "8e7339914601919c02cae50c7b693fa5d6cc3562bfe6164af6251df4f095d812"
+    },
+    "en-GB:window": {
+      "file": "003f19e3736c867f3749.mp3",
+      "sha256": "42efde674699056370a25aeeb33ba660f6f2046edadafcf753c0fa1065bc51e7"
+    },
+    "en-GB:mirror": {
+      "file": "29ae883d3288cb256972.mp3",
+      "sha256": "83c47322f56413f14f2f3fece9a8eda098acd69fe659a85f75e428f67170ec90"
+    },
+    "en-GB:sofa": {
+      "file": "2c973edef151ebd53ee7.mp3",
+      "sha256": "6430fc7aa1c3fb5600a675ee6ac468fca346fd96c8d4623361494626ce6918fa"
+    },
+    "en-GB:lamp": {
+      "file": "7bb320ef59e8b115a895.mp3",
+      "sha256": "d6545053eb368d269857a7950103f674ca5940188f5e9e3e9203ef1e31d17db4"
+    },
+    "en-GB:telephone": {
+      "file": "0e288a8282990fdc11a0.mp3",
+      "sha256": "241eb1fbd8ec8c9311809dc7d5c397b5f374d579f2f47c273f602836af71a035"
+    },
+    "en-GB:television": {
+      "file": "0aa6397fb956cff7eb6e.mp3",
+      "sha256": "b40e07d52e17b8cab107d355608c8b0256fb6d1162b4ee4f282a286d71af9205"
+    },
+    "en-GB:camera": {
+      "file": "f60a95893b2b8d0ff596.mp3",
+      "sha256": "3c47fc352477560da227363b144256f43f86d96c432e62bc2d9349dfd4ffa56b"
+    },
+    "en-GB:basket": {
+      "file": "5977b704c91f713cdb0b.mp3",
+      "sha256": "989cf223afc84ea7c8ebc481eaef8dce4ffe2b3202964862d4bbdd0e9fd94bce"
+    },
+    "en-GB:soap": {
+      "file": "b6bde9a97b079c067440.mp3",
+      "sha256": "1b8a663c70ac652552ab5fda041f59089b3b03919a73a1db95d76bd44a1e3cb2"
+    },
+    "en-GB:toothbrush": {
+      "file": "99c1d610331a970324ee.mp3",
+      "sha256": "b2e6e1fe7f44597e9e6e9eb2b04d0255c76add3b61e9ed39768b2537ad6fe82d"
+    },
+    "en-GB:bathtub": {
+      "file": "74df5940b3919c75d813.mp3",
+      "sha256": "4a49638b31be6ca24c69308ef7186f78c598bb5100ff829e9433f1403233daf2"
+    },
+    "en-GB:spoon": {
+      "file": "5d152549c878d803af1c.mp3",
+      "sha256": "39eca6d36263054cc64d2bad5ee631713099607a254e636d6a6e7a1b43a90af0"
+    },
+    "en-GB:chopsticks": {
+      "file": "29c8f94155aabbf8dd95.mp3",
+      "sha256": "046293a77c83b5ddb9e1263edd1dc2eb7906a2fd43aa7cdc3510194a3b32789c"
+    },
+    "en-GB:broom": {
+      "file": "786149e11d15d65a4ee7.mp3",
+      "sha256": "dc2b11b5e3fb1ecb9a77cc50a7db367fe29840ac7189c3d85fdaf20d3922f398"
+    },
+    "en-GB:T-shirt": {
+      "file": "049e453b252c1aa7bf9d.mp3",
+      "sha256": "eb67c86e468ef5a9bc0a31880ceffa2e10f7d66b3a04e70c06a4cdc08d5c2a16"
+    },
+    "en-GB:trousers": {
+      "file": "10e563e1636c77073ab2.mp3",
+      "sha256": "8cba5a64f5e3feed18de444d3c0042fe2b9c5c6809114a63cda9126feba372c0"
+    },
+    "en-GB:dress": {
+      "file": "55b8084ffcdf111bee70.mp3",
+      "sha256": "00fd24b97b32a5aa2efe94bb33d0692881e9d4d3a04a87fec192dac861759235"
+    },
+    "en-GB:coat": {
+      "file": "6559a092a19535145f1c.mp3",
+      "sha256": "8b5872d51457f234f1454ca0646047795be6c2ddf899fe8c038090ce5af8bd54"
+    },
+    "en-GB:socks": {
+      "file": "b68869b0fc9ae0bb9e47.mp3",
+      "sha256": "7bcb5abaf77c1c97612d8bece648532d03c93f364bd372c83890d14f1aeaff7b"
+    },
+    "en-GB:gloves": {
+      "file": "cfb90a5501cc0445315d.mp3",
+      "sha256": "36b20a7e36d8e919d0e2044b1c59e73d5e86973320034b747227a915ba7f9e81"
+    },
+    "en-GB:scarf": {
+      "file": "36f7e9b717a99e4feb82.mp3",
+      "sha256": "42034f6d59c42b196f90bb64cae29143d9887cff0b07be84511de1299982caa3"
+    },
+    "en-GB:cap": {
+      "file": "9606bdfffbee66d5a256.mp3",
+      "sha256": "e5d4dba286971bb43562fd9b3ec14c279dd634a17c526082f0dc367fff08ede3"
+    },
+    "en-GB:trainers": {
+      "file": "dba37ae0735250fcec17.mp3",
+      "sha256": "aa2d19adec898b34a3ae5e825501da28fdab2022e0884d436c5eb62683485e91"
+    },
+    "en-GB:boots": {
+      "file": "374f9be1d1847780fc50.mp3",
+      "sha256": "880a22fb233701772ebf2b27fdd69b7465facb487fad441be3974a7c9fe9406f"
+    },
+    "en-GB:sandals": {
+      "file": "1d173ce76695a4aaaa59.mp3",
+      "sha256": "518b72b9153368eddb91f88bc24af7c56e03d91c281220a6a75b4c3ff8abbf9f"
+    },
+    "en-GB:school bag": {
+      "file": "380b2167d41fc6ce2f9a.mp3",
+      "sha256": "dc91d8990475bc2a32b3b06ce5ce4b7871c168b2340a23c67a387e4901444ab1"
+    },
+    "en-GB:glasses": {
+      "file": "440b8aefc891a81145d3.mp3",
+      "sha256": "c8603b23834f7929cfa3dc73d4086e9c321cc79dc608efa1d68ede66eb227fd5"
+    },
+    "en-GB:ring": {
+      "file": "9126e1d802dc6c80a01b.mp3",
+      "sha256": "a29b305843bfd96764ba290f2fd2174bba8ae0688d8d4c22747db1ca14e06a42"
+    },
+    "en-GB:ribbon": {
+      "file": "21479943b9e104addf3f.mp3",
+      "sha256": "5dbe78c9e0237710c7ce1b7850c659cfdf9cae5549aff847717e0ebb34aa8e48"
+    },
+    "en-GB:crown": {
+      "file": "05c8b7018ceb1e13571f.mp3",
+      "sha256": "7e593b51c7e60262fcd167a3119f410ca3671ee8a9b536618be7cff073b09887"
+    },
+    "en-GB:mum": {
+      "file": "7d3cdd2469826cdaabe1.mp3",
+      "sha256": "06c8061ce4658d59fbc03b8f332b5ad640c24443bdd034a6adddf8ae49053a50"
+    },
+    "en-GB:dad": {
+      "file": "e0902d4b6d3a277c87ff.mp3",
+      "sha256": "b3a4db1069f54af015fc86699bfefca63ce7665c6a77751f15071a80e6fe07de"
+    },
+    "en-GB:grandma": {
+      "file": "53b74de7f6878b340f37.mp3",
+      "sha256": "ae7de10aaded4cddb37845a17f1be563f8306ed57b25057b120797ce9f90151b"
+    },
+    "en-GB:grandpa": {
+      "file": "fcf640d8ab58aebcc8c1.mp3",
+      "sha256": "d6a8d359ca126e6e0f79148591f238a89b2f0e181cf0bb766bdf7ab4fed20ca8"
+    },
+    "en-GB:baby": {
+      "file": "d405c6c1dac653e95cf3.mp3",
+      "sha256": "85b1374392830c36fe305e3406b471937a81a77253c4616c3dab210a342cc363"
+    },
+    "en-GB:family": {
+      "file": "9af0dce9e1bd4f081697.mp3",
+      "sha256": "f13e7ebc4c92ab5e923cd3af04229ad7c1f25a65606910447e72b18542f1c2ea"
+    },
+    "en-GB:boy": {
+      "file": "babb0d9ab46ad4df2296.mp3",
+      "sha256": "ca78dde8c1e72431f4b8e98aeca911ecab92bdf98a42705d5d711472fb4c26a0"
+    },
+    "en-GB:girl": {
+      "file": "357c55cbc9f8c4e4befc.mp3",
+      "sha256": "f8861d4be98472c4e547c811d182026375897488cbc4116281e117c435ea9479"
+    },
+    "en-GB:happiness": {
+      "file": "c73c17133d21077b7bfc.mp3",
+      "sha256": "45e589b60d11454a87eca51053f40f7e30b5af050bcee2a40503d74a9e15dfbe"
+    },
+    "en-GB:sadness": {
+      "file": "682a860c18b0571fc3f6.mp3",
+      "sha256": "ffc79e0d70780dc1c2e18b8101f81e4a95490fe6727cde3454499ff715fdec9d"
+    },
+    "en-GB:anger": {
+      "file": "b9f9877df3b893591e85.mp3",
+      "sha256": "b537cb6230478492803240f3dc971c591aa2b9eda70d2837dc4c1430712c399b"
+    },
+    "en-GB:surprise": {
+      "file": "2e47d93d755573bbbe55.mp3",
+      "sha256": "1e253e0fcf4fb7227a2293c06aa03e852fd73ce01111007bade911550f1b4658"
+    },
+    "en-GB:sleepiness": {
+      "file": "6b48153d64eb1f32355a.mp3",
+      "sha256": "f9b7f3b3b392d8d07e02c52bc7268737d629a294fb19bbd8bfbd67fe8cd16d32"
+    },
+    "en-GB:love": {
+      "file": "42732287a3da22ca9d08.mp3",
+      "sha256": "819bd957913cf0a2f925b359e92b70d6099db7b52ea00bf131b3847003edd18a"
+    },
+    "en-GB:fear": {
+      "file": "301e348b7c545dd235ac.mp3",
+      "sha256": "5040045941123afa7eb5bb5fb16575ad675e22f8af0d8d0ab616fc1ba541ca0a"
+    },
+    "en-GB:laughter": {
+      "file": "b35227604314c992dde4.mp3",
+      "sha256": "72a95e5385505595aa462f046060475a8a1330ecf4d0c745eeafad44ee5469ce"
+    },
+    "en-GB:worry": {
+      "file": "ced3bc48dfc2ffee8862.mp3",
+      "sha256": "14ace212308bea74b79c1d39dc6ee83a278804c2c894e6627861491d13d98629"
+    },
+    "en-GB:shyness": {
+      "file": "23f6d4552f122bad82b0.mp3",
+      "sha256": "7ca12863fe5531b0f2c0929f6ca476be82cdb5c3af0c1a16f7a08f8e1c2a29bc"
+    },
+    "en-GB:school": {
+      "file": "e31dbcd71b7746c2ef61.mp3",
+      "sha256": "a54648233c34e4f48174c1a06c11fdda866238c5b1289e1d1ddb8e298c41c07f"
+    },
+    "en-GB:hospital": {
+      "file": "039c7db361c08b8dd0cf.mp3",
+      "sha256": "76a3a31a1afe4a50dff25305f311afc86f7245be36837c2849e4ed75335558ff"
+    },
+    "en-GB:castle": {
+      "file": "f13b4a9564371d6fb89e.mp3",
+      "sha256": "55c54d8715bd312eb876eeba16cdcf8139be3381ca18b165671fc437f0aef05a"
+    },
+    "en-GB:tent": {
+      "file": "f5864e572a21abb30770.mp3",
+      "sha256": "c795ca8b0e4c5a6e61b4f3157aaf44f276ba5d04c717a55c68abe033ce99596a"
+    },
+    "en-GB:beach": {
+      "file": "77408739ed0b2482b0da.mp3",
+      "sha256": "c372ee08bf6eb60e6af2b15cfdbf288d35eeca71261e40467a61f6d4ab1d3c7f"
+    },
+    "en-GB:fountain": {
+      "file": "2731fbb31db83e35c0d4.mp3",
+      "sha256": "4fa80a41361c831e550a9fe3c5c87a8b9ac4cff0b47365a9cba479e8a26a6ff8"
+    },
+    "en-GB:bridge": {
+      "file": "98670a108ac1128d9c9c.mp3",
+      "sha256": "fc0df8bcbf1d3841e6b484353c5b9ce54ca70d8eb8894fc71d13e064efa096b3"
+    },
+    "en-GB:Ferris wheel": {
+      "file": "6a8c4cae23c9d6a1264f.mp3",
+      "sha256": "8992d690169df892caf3a050a77ce6fce6e2079ab4a87b42f99de7345b76fc30"
+    },
+    "en-GB:circus": {
+      "file": "c5b94e9017f021bc77bf.mp3",
+      "sha256": "fd77b6d47b883503879a4548edd823e30763e0977315893f95217ced024cd395"
+    },
+    "en-GB:post office": {
+      "file": "b75d0f88dc075634739e.mp3",
+      "sha256": "3988f069ff0d026bd6de6f32dd1963b9037c3f778f44717cb0533149f1d45387"
+    },
+    "en-GB:stadium": {
+      "file": "d3ad68ec2a1a9eecc4a9.mp3",
+      "sha256": "58c896298378e15ccee725ffcd5394751c9e5a6a521cf7253bd2952c882160a0"
+    },
+    "en-GB:factory": {
+      "file": "711aced192222211fce0.mp3",
+      "sha256": "150b39e460083e332b175515b1bd2123d5488f11d8a57b088b57c1cc1aead2c2"
+    },
+    "en-GB:kite": {
+      "file": "8ea288cdaf10e960ccf7.mp3",
+      "sha256": "3ecae737b720a7d3faead91ddb9f7e289a7bd1e742b34d37d8049168a738e3ab"
+    },
+    "en-GB:puzzle": {
+      "file": "19d363a8098d421e40ed.mp3",
+      "sha256": "b783c302d61fd82037e64e720a9e49bd032243339915b2523f3e9af426d8c9a7"
+    },
+    "en-GB:yo-yo": {
+      "file": "d01054d3fb4b1978ab87.mp3",
+      "sha256": "c6b2dfc33ce17a53e8145d65609153a2324e8bb1803eb52e9105d4008d487312"
+    },
+    "en-GB:dice": {
+      "file": "1a3fa6f85c989d2cb20b.mp3",
+      "sha256": "2657ba119019173b61a355dab95a7a2c405e4f03dbf4064105e4e53428835d39"
+    },
+    "en-GB:drum": {
+      "file": "21c7e3f883d0fd44acc1.mp3",
+      "sha256": "e3054857707c673183ed191e1ace6859e2ace3c7099977ea67ffe87897cb3c1c"
+    },
+    "en-GB:guitar": {
+      "file": "4808fcb92dcb57ffb4ef.mp3",
+      "sha256": "1daf647045e103259b34029de8821cfa552f31560072ec4c763f2276b9bd2ef2"
+    },
+    "en-GB:piano": {
+      "file": "4483c3310697b9796b1f.mp3",
+      "sha256": "c02acb2db0327b7e43fc4c90d27c4eb67df91f2fd56cf9f499479f3f76cf0882"
+    },
+    "en-GB:trumpet": {
+      "file": "86352a5797220b354879.mp3",
+      "sha256": "ac0b0d1c05703540d2dd6fcb031fa32c12bff9c1b7d40f514fae04759a92c1a2"
+    },
+    "en-GB:violin": {
+      "file": "20a279b14e03de453a2d.mp3",
+      "sha256": "469dba728912023c5483803214e01b278dde0b4b6c52e71d812338fc7464d675"
+    },
+    "en-GB:flute": {
+      "file": "543ea205da6ecf8ff6dd.mp3",
+      "sha256": "7ec1931e9a36386109a812e40d150fb862fc42ac41cd13575f364cec03b15c4a"
+    },
+    "en-GB:saxophone": {
+      "file": "d328c1677a851af62bad.mp3",
+      "sha256": "48249d9515abf1bde49b318853a85ca744261047b9bbd1eaa11815721c47b502"
+    },
+    "en-GB:xylophone": {
+      "file": "f66345bed755ad0a7eec.mp3",
+      "sha256": "1699ffcd327abae52defb0308973a89e9ec7846c541e5bc22e51194c57b14d5b"
+    },
+    "en-GB:skateboard": {
+      "file": "14ca7674815b9d337d76.mp3",
+      "sha256": "e1cd42fbd07e431a48bc7ee4f8cc78ff2d8cae70f6fd5687d193500e7824e804"
+    },
+    "en-GB:basketball": {
+      "file": "f09c53a39cd71b9e6531.mp3",
+      "sha256": "0ca83b145f9d6b14fb978d216084a17d3b3223eedb263a6929f060423c37fb07"
+    },
+    "en-GB:baseball": {
+      "file": "f7896dd0ea9810f0d18e.mp3",
+      "sha256": "204bbf6c99c06ff98fdebcb24f560cbe23f6da196a6a6bde13b2ab9d61c5add3"
+    },
+    "en-GB:tennis racket": {
+      "file": "87931afe1e4cc20fe48d.mp3",
+      "sha256": "5846b0b3a38b781ca05d0b0858bbaec48c46b90c1bbb1781c5ffb8807cbf10b5"
+    },
+    "en-GB:red": {
+      "file": "c9dadfc034583826fed7.mp3",
+      "sha256": "c98efa5e124063704cba7c9ab1c30bff02b4ef9a3c7c16efeca4145daa219d97"
+    },
+    "en-GB:orange": {
+      "file": "a92ec229252cd55a7fcd.mp3",
+      "sha256": "03068331e2291bad3bdfd0908acc1f82025acdb557ad9df8ee07bb9c8aa204d1"
+    },
+    "en-GB:yellow": {
+      "file": "4ac9f707b4629e2b2d01.mp3",
+      "sha256": "9da28936324f2050bb71378a1107f5c0773b8138d7a9aa4f5b68da821115031f"
+    },
+    "en-GB:green": {
+      "file": "fbe821dbceab4b972435.mp3",
+      "sha256": "fe399c4ecd18b290e96361474fac77b1bcba83bfa40743c7c6b6d4abd31bfbd7"
+    },
+    "en-GB:blue": {
+      "file": "37c2837b016660078e4d.mp3",
+      "sha256": "49347d617597f8973f0f16c48c9c9e948d999d7e5b7ab480773d27e46e450fdd"
+    },
+    "en-GB:purple": {
+      "file": "a3302995abc5d5559747.mp3",
+      "sha256": "5ece3c3d29e73241a069c4747ce7b1f2e9cf363cb70b622ab7dddc35466f8fab"
+    },
+    "en-GB:brown": {
+      "file": "e32ede104e40333a5d4f.mp3",
+      "sha256": "6da4a11f83f054546fc4fe389f0329a1fa3ebe0895b1f0dd4fd23cccc32e923f"
+    },
+    "en-GB:black": {
+      "file": "12bbb22e27078e360265.mp3",
+      "sha256": "a0fac0d47317bbf8ab56a543ab92e5d2dcb2d055d16e6211ec82ddc7d2b4ff2a"
+    },
+    "en-GB:white": {
+      "file": "97bd6809eaadd0832cff.mp3",
+      "sha256": "881bf8d82f58ba93640ff23f27e70da45589334ef4bf5ac40fb9879550c77896"
+    },
+    "en-GB:pink": {
+      "file": "ddd7ac82119c0183b266.mp3",
+      "sha256": "c3b9e122b502b1eced945846c7b2fd0c8adfb22064c7f20cdf42025dabcca928"
+    },
+    "en-GB:goal": {
+      "file": "930a82b4627e81893585.mp3",
+      "sha256": "2c20426d59d4f983b5bdf5631626296265b07a99ff961051e379d3922f34c6be"
+    },
+    "en-GB:gold medal": {
+      "file": "824641dd282d034f083f.mp3",
+      "sha256": "1e9981bef72b2e3b99ede1aa08238106c5abe43045f9e5cbcb41af0feb1cb5df"
+    },
+    "en-GB:trophy": {
+      "file": "72ce2d9904b8b746aae4.mp3",
+      "sha256": "c227ba14ea3d14c2067a175b65e0b4a521beea09af54882c6d92f8f84bb137f3"
+    },
+    "en-GB:kit": {
+      "file": "b31d4068ba3c4fb5044d.mp3",
+      "sha256": "fa659bde8a686d78cb5a72e7dc77cb67b3f3b36579d8bd7d68d234134c84a1a9"
+    },
+    "en-GB:Son Heung-min": {
+      "file": "a97269799376cef89a95.mp3",
+      "sha256": "fb6ee57e555395e11b978f671941777fece7e1cd3324d9e64d5f9e6ecdd83d49"
+    },
+    "en-GB:Lee Kang-in": {
+      "file": "0ea09013878918d6bcd3.mp3",
+      "sha256": "a34125016c29212eabf427401492148c286fde41c55d6dfd3d02af23ff5f8719"
+    },
+    "en-GB:Kim Min-jae": {
+      "file": "e8c62c31ea73ccbde6e1.mp3",
+      "sha256": "057a4cf4aeefb2df8ca83fb6de375e0f1c153c2db285353423caaffce41caa94"
+    },
+    "en-GB:Park Ji-sung": {
+      "file": "f54832c262db01189f0c.mp3",
+      "sha256": "603f9e3b15ee19dbd4e2dad8f4c03340fb3ce796ef038480da408de039c8893f"
+    },
+    "en-GB:Lionel Messi": {
+      "file": "8a0a3494e380417dddf9.mp3",
+      "sha256": "a8721dd2e5bc7795777c42e3f78091edf699b110130575baa31f9742aeefcc29"
+    },
+    "en-GB:Cristiano Ronaldo": {
+      "file": "5433828fea985980bec4.mp3",
+      "sha256": "d89e38580e3827ed7cea0f57ea9439f70a9baae09a9dbf75f41a51da83eb7e54"
+    },
+    "en-GB:Kylian Mbappé": {
+      "file": "9ae53f94a276a2435b6b.mp3",
+      "sha256": "06610aeb2964077f7e6a5714e610dd56484504ef138d5ee52a81cbd0dc9900d0"
+    },
+    "en-GB:Neymar": {
+      "file": "6dc06ae4a1ec67ce44c4.mp3",
+      "sha256": "63961105ad5d74aa4cd39791c963c422551a843c35f4c0bb1e86ef16a7495ba6"
+    },
+    "en-GB:Mohamed Salah": {
+      "file": "ab3b3ac20f8b21f276b5.mp3",
+      "sha256": "307405cd58b2c5573997f585ec6482f1f769939c077539a72048a036986e6901"
+    },
+    "en-GB:Harry Kane": {
+      "file": "5062c9b68aa9fb689e73.mp3",
+      "sha256": "ca42b4db3be7a566582a28c43eee269848d160a91a7d16e69be41c7240f36e02"
+    },
+    "en-GB:Jude Bellingham": {
+      "file": "f4305648a9ee8eb96614.mp3",
+      "sha256": "2e212e951581c853a0e5c0bd445872b6251e204dc5df31fefe1e7478a2e77bcf"
+    },
+    "en-GB:Vinícius Júnior": {
+      "file": "abc4b2b487a2dbaa0a4a.mp3",
+      "sha256": "14c08fba1b44ccf08d3369c3a65d67035ee18257db7d566773259693cebc2558"
+    },
+    "en-GB:Kevin De Bruyne": {
+      "file": "79cfd8b69ce573a0b8f2.mp3",
+      "sha256": "1644e7c89e126b2e9d7fd474833cc0d969342c4629ff6be7ddd3cb924c17ae19"
+    },
+    "en-GB:Martin Ødegaard": {
+      "file": "ecd738abfabe374a2ff6.mp3",
+      "sha256": "6542c36cfb0a41befbfebe3a124b384607f2e1e6a7e9605c04b83579e80404ec"
+    },
+    "en-GB:Declan Rice": {
+      "file": "62d33443f1f95649b489.mp3",
+      "sha256": "ab3c8f2a40917950a7e25086d5eef88650cbf1905eeb5cb60e30aff3c4b478aa"
+    },
+    "en-GB:Cole Palmer": {
+      "file": "3044ea4049d9ddfabaf9.mp3",
+      "sha256": "3ac19579d893ca0b25e528b5f22db5bcea91cd2919c2d94aec58671eec2d2c04"
+    },
+    "en-GB:Rodri": {
+      "file": "15b81881e2516c6fc48f.mp3",
+      "sha256": "c3aad014928c74592dee375042c082880f0469ab1e0163ac4cf1e4d049afcc9d"
+    },
+    "en-GB:Pedri": {
+      "file": "ecd8b2821c68afd10752.mp3",
+      "sha256": "0f206bcf682a40050614d50a54aa1a26323d04a25094c7f6ccf4bbc69baade60"
+    },
+    "en-GB:Jamal Musiala": {
+      "file": "5b6b2f7250aa307d01db.mp3",
+      "sha256": "26105920bcb6089e2ee6cdf529e6dae7a6da45788700e77f2bbf502bbe393254"
+    },
+    "en-GB:Robert Lewandowski": {
+      "file": "5d47e7cf0096091b29f0.mp3",
+      "sha256": "58cc7d5beaf5e6684ca71e29d129c5db2b90295ac4a357ac462a65b55ac2e19e"
+    },
+    "en-GB:Luka Modrić": {
+      "file": "78d0fc881a4c623c9fc4.mp3",
+      "sha256": "f0412393fc79e58661a6a96ab6ffe26ee43e3620feb6f0a0458256932aee5476"
+    },
+    "en-GB:Virgil van Dijk": {
+      "file": "bacc12db83dd41c88bc2.mp3",
+      "sha256": "e22c4c396a083d3900bd95e0abb6cd41ce35840bfab173f2ebd580d4da515159"
+    },
+    "en-GB:Alisson Becker": {
+      "file": "260c420541de8bfc7ba4.mp3",
+      "sha256": "c7683a8d95b2ea0455bbedf589a0b55a40b893e653f2eee5f309c5d5adaa4d67"
+    },
+    "en-GB:Thibaut Courtois": {
+      "file": "896ac3851993042e2198.mp3",
+      "sha256": "66ee58b34e276b25fe3400b355e9c9c54bed421617113614d67e4e146354fc72"
+    },
+    "en-GB:Ronaldinho": {
+      "file": "2353da800167504f68cd.mp3",
+      "sha256": "5c633907a39c7282f296d70225c86efd725589ec1369ae11f3a3bb6c8d03f338"
+    },
+    "en-GB:Hello!": {
+      "file": "77aac3ffa78868a01993.mp3",
+      "sha256": "2ce2d386fc9b583ab4effb01fc1e3f16a0164699e3659fb0a1f9617414eb9d1a"
+    },
+    "en-GB:Good morning!": {
+      "file": "904996958082f4dfa4ce.mp3",
+      "sha256": "2659f93858e0d0d5636a448d73a72d4aaab93220fe232f3fb4fed9414336b6af"
+    },
+    "en-GB:What is your name?": {
+      "file": "008831ac80a4d12f9371.mp3",
+      "sha256": "4ba818be9db337da932a8a06653b24070356d221b1d3a7b9c7df50d1c879f662"
+    },
+    "en-GB:Nice to meet you.": {
+      "file": "a1b1c4013e51a11b8c17.mp3",
+      "sha256": "ac087fd31773b9b0386a3a144ed63fc60b589bbe5969aaeb36d98aa00ff4114c"
+    },
+    "en-GB:How are you?": {
+      "file": "866b59837ec72b145b87.mp3",
+      "sha256": "7e030161934ae099d7460eddd681b484c3c7f3f215dc00ed7144c5b9af250103"
+    },
+    "en-GB:I am good.": {
+      "file": "fcca3143b7df37f54805.mp3",
+      "sha256": "933481c3300b78f69aa05e8397bf918c397f515f925383d50518960bd8e58ecf"
+    },
+    "en-GB:I am five years old.": {
+      "file": "bc8f411b3fe77b6c4d9d.mp3",
+      "sha256": "ad076152df8f8f9974ebcae8556cf21a1ba887b1fef90a47ee706abd19d0ae48"
+    },
+    "en-GB:I love my family.": {
+      "file": "7fe59bc11b0b5936ea85.mp3",
+      "sha256": "ebc5e97ba3e9d8f29d1a61a9babc691071b018df36e51c0de0a9fd8bd5cb6192"
+    },
+    "en-GB:I am happy.": {
+      "file": "5f6ffe294cf2db4c1326.mp3",
+      "sha256": "e0252323807ff851fee4f542d27b9dbd0c3970e5aeb60100b26fd17fb2051a61"
+    },
+    "en-GB:I am hungry.": {
+      "file": "eafeaf829f826fa3c9fc.mp3",
+      "sha256": "ace12df9ee35df8c07e2acd2c33e70310f76ddf9b4d5bdb95ffc8441cdea6a6a"
+    },
+    "en-GB:I am sleepy.": {
+      "file": "5ad6c06e5f99943e699b.mp3",
+      "sha256": "44077dd7417fd574fe5f45e8ca05a5c2775f9913ffde2ff221ee7b962b3deeab"
+    },
+    "en-GB:I like apples.": {
+      "file": "1f15673889b0088fedbc.mp3",
+      "sha256": "de35cac400695124225c8fb6435e06ed637b09027a048e8b74b66a47b3eb70c5"
+    },
+    "en-GB:I like dogs.": {
+      "file": "b486fcdeb1f52ceed383.mp3",
+      "sha256": "68dfdc4cbd6a3be8b37d760d0205e6d743a02f4d405fce1aa2005ea1fd535d0c"
+    },
+    "en-GB:one": {
+      "file": "b687365987d22674089b.mp3",
+      "sha256": "2f4fcd4f5997c30950c8c30349b847f61e529ced3f1361758df5a166e367bd0c"
+    },
+    "en-GB:two": {
+      "file": "e97cf97529eeecea0f32.mp3",
+      "sha256": "15345de27d53312b3ab79de7c72506df907d6f0a7ebd749156640dbaf5817f39"
+    },
+    "en-GB:three": {
+      "file": "e834b0ea56dabbd3d272.mp3",
+      "sha256": "8db2b395501cb2f9ee6f18086d5f2ee301a29f5cfa92a04c1779ad9195cbcf49"
+    },
+    "en-GB:four": {
+      "file": "a57de8ef30173d74d63c.mp3",
+      "sha256": "5d2d0412fef281ca607d1ff0be193ec9b548c4e53917aaded2127cffac006f89"
+    },
+    "en-GB:five": {
+      "file": "8014244102c33febec51.mp3",
+      "sha256": "53357352cdf9c763f9613d20531161e1fefdb6df82741d55ff21e2e4fc31d3d1"
+    },
+    "en-GB:Let's count!": {
+      "file": "90e9ba9891e9f5f8eb93.mp3",
+      "sha256": "f4da176878abf292f10461868e1f402ae1ee49601b927248bd15fb8d8383d364"
+    },
+    "en-GB:The rainbow is colourful.": {
+      "file": "e04def703c7dff18f51b.mp3",
+      "sha256": "4966a4dfc3d3ebb83bfa8f0aeb6c5dc3098f0c0055e04122e330fc45450e0095"
+    },
+    "en-GB:I like football.": {
+      "file": "07ebc5db2f8ec673dff8.mp3",
+      "sha256": "4286bac1fef61b04d249e290f9bf7db030b95cca98486024a05bd4bcc7ee383e"
+    },
+    "en-GB:Let's play together.": {
+      "file": "f6f6b4e8102184ca53d5.mp3",
+      "sha256": "ba9e51b470d06dad2eca542a8b4ee20956ac8d502511aed3d9b7025a4d2c5d88"
+    },
+    "en-GB:Thank you.": {
+      "file": "e813f0cf28431c713be0.mp3",
+      "sha256": "e1e17f6d3789c7c24bcfaec2324c7ba421474fca83f672478664ca045b5ef382"
+    },
+    "en-GB:I am sorry.": {
+      "file": "bf1ba1e921db0640438f.mp3",
+      "sha256": "2d9a7f3613436c4463845e08d029d8f237855517369f13072a3248e84549d73b"
+    },
+    "en-GB:It's okay.": {
+      "file": "240a7042a11640db9ed7.mp3",
+      "sha256": "d383946036b616d928eacdaa83610ddc2188dbed964c3492ebe6c72763b66e37"
+    },
+    "en-GB:I love you.": {
+      "file": "71c72d741b334859b214.mp3",
+      "sha256": "c5918bc1c027ad8d773d56e3cb93d588a51321aced00daef8dcb7092770043d2"
+    },
+    "en-GB:You can do it!": {
+      "file": "7f1044163cd5d4380db4.mp3",
+      "sha256": "bf3c1e5a3917b56b7c50c35345696787907d1deb28c1d8dde86fa9165191958c"
+    },
+    "en-GB:Bye bye!": {
+      "file": "0a02f2582e124f2d905a.mp3",
+      "sha256": "740d88d512583182576575a87e3d0a14bf5a187ac049d7af89c420304f9cb9a3"
+    },
+    "en-GB:See you again.": {
+      "file": "f4f1f551019e4167420a.mp3",
+      "sha256": "8f23f8e4935f794345ffe6a7393a88c9ebf247593c1d8934181e54bbff98d55f"
+    }
+  }
+}

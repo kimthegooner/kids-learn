@@ -1,163 +1,98 @@
 "use client";
 
-// 수학: 한 자리 숫자 더하기·빼기를 계속 내는 연습.
-// 다섯 살용 — 답은 숫자 보기 3개 중 터치. 맞히면 별 +1, 바로 다음 문제.
-
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { saySentenceKo, cancelSpeech } from "@/lib/speech";
-import { shuffle } from "@/lib/ui";
+import { readProgress, recordEvent, saveProgress } from "@/lib/progress";
+import { DEFAULT_MATH, MATH_OPERATIONS, MATH_RANGES, makeProblem, makeOptions, mathHint, problemLabel, recommendedMathRange, type MathSettings, type Problem } from "@/lib/math";
 
-type Problem = { a: number; op: "+" | "−"; b: number; answer: number };
-
-function makeProblem(): Problem {
-  const plus = Math.random() < 0.5;
-  if (plus) {
-    const a = 1 + Math.floor(Math.random() * 9); // 1~9
-    const b = 1 + Math.floor(Math.random() * 9); // 1~9
-    return { a, op: "+", b, answer: a + b };
-  }
-  // 빼기: 결과가 음수가 되지 않도록 a ≥ b
-  const a = 2 + Math.floor(Math.random() * 8); // 2~9
-  const b = 1 + Math.floor(Math.random() * (a - 1)); // 1~(a-1)
-  return { a, op: "−", b, answer: a - b };
-}
-
-function makeOptions(answer: number): number[] {
-  const set = new Set<number>([answer]);
-  while (set.size < 3) {
-    const d = answer + (Math.floor(Math.random() * 7) - 3); // ±3
-    if (d >= 0) set.add(d);
-  }
-  return shuffle([...set]);
-}
-
-// 넘버블록스 스타일 힌트: 숫자를 색깔 큐브 캐릭터로 (5개씩 줄맞춤 → 십 단위 감각).
-// 더하기: a 캐릭터 ➕ b 캐릭터. 빼기: a 큐브 중 뒤 b개를 ✕로 사라지게.
-
-// 숫자별 색 (넘버블록스 느낌: 1빨강 2주황 3노랑 4초록 5파랑 6남 7보라 8분홍 9회색)
-const NB_COLORS = [
-  "#ec4d3d", "#f59331", "#f7d046", "#57c047", "#36bfe6",
-  "#6a7bd6", "#b15fd1", "#ef6cab", "#8a96a3",
-];
-const colorFor = (n: number) => NB_COLORS[(n - 1) % NB_COLORS.length] ?? "#888";
-
-// 숫자별 정식 넘버블록스 형태(열 수): 소수(2,3,5,7)는 1열 탑, 합성수는 사각형.
-// 4=2×2, 6=2×3, 8=2×4, 9=3×3.
-const COLS: Record<number, number> = {
-  1: 1, 2: 1, 3: 1, 4: 2, 5: 1, 6: 2, 7: 1, 8: 2, 9: 3,
-};
-
-// 숫자 value 를 그 형태의 큐브 캐릭터로. faded개는 뒤에서부터 ✕(빼기).
-function Blocks({ value, faded = 0 }: { value: number; faded?: number }) {
-  const cols = COLS[value] ?? Math.min(5, value);
-  const color = colorFor(value);
-  return (
-    <div className="nb-char" style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}>
-      {Array.from({ length: value }).map((_, i) => {
-        const gone = faded > 0 && i >= value - faded;
-        return (
-          <div
-            key={i}
-            className={`cube ${gone ? "gone" : ""}`}
-            style={gone ? undefined : { background: color }}
-          />
-        );
-      })}
-      <span className="nb-face">
-        <span className="nb-eyes">
-          <i />
-          <i />
-        </span>
-        <span className="nb-mouth" />
-      </span>
-    </div>
-  );
-}
-
-function HintBlocks({ a, b, op }: { a: number; b: number; op: "+" | "−" }) {
-  if (op === "+") {
-    return (
-      <div className="mp-hint">
-        <Blocks value={a} />
-        <span className="nb-op">➕</span>
-        <Blocks value={b} />
-      </div>
-    );
-  }
-  return (
-    <div className="mp-hint">
-      <Blocks value={a} faded={b} />
-    </div>
-  );
-}
-
-export default function MathScreen({ onStar }: { onStar: () => void }) {
+export default function MathScreen({ onStar, onDone }: { onStar: () => void; onDone: () => void }) {
+  const [settings, setSettings] = useState<MathSettings>(DEFAULT_MATH);
+  const [stage, setStage] = useState<"setup" | "play" | "done">("setup");
   const [prob, setProb] = useState<Problem | null>(null);
   const [options, setOptions] = useState<number[]>([]);
+  const [answer, setAnswer] = useState("");
   const [wrong, setWrong] = useState<number[]>([]);
   const [solved, setSolved] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const [round, setRound] = useState(0);
+  const [feedback, setFeedback] = useState("차근차근 계산하고 답을 알려줘.");
+  const [cleanAnswers, setCleanAnswers] = useState(0);
+  const attempts = useRef(new Set<number>());
+  const hints = useRef(0);
+  const locked = useRef(false);
+  const rewarded = useRef(false);
+  const input = useRef<HTMLInputElement>(null);
 
-  // 다음 문제 (마운트 시점에 생성 → SSR 하이드레이션 불일치 방지)
-  const next = useCallback(() => {
-    const p = makeProblem();
+  useEffect(() => { setSettings(readProgress().mathSettings); return cancelSpeech; }, []);
+  function speakProblem(p: Problem) { saySentenceKo(`${p.a} ${p.op === "+" ? "더하기" : p.op === "−" ? "빼기" : "곱하기"} ${p.b}는 얼마일까?`); }
+  function next(index: number, config = settings) {
+    const p = makeProblem(config, Math.random, index);
     setProb(p);
-    setOptions(makeOptions(p.answer));
-    setWrong([]);
-    setSolved(false);
-    setShowHint(false);
-    saySentenceKo(`${p.a} ${p.op === "+" ? "더하기" : "빼기"} ${p.b}는?`);
-  }, []);
-
-  useEffect(() => {
-    next();
-    return () => cancelSpeech();
-  }, [next]);
-
-  const onChoose = (n: number) => {
-    if (!prob || solved) return;
+    setOptions(makeOptions(p.answer, p.op === "×" ? 81 : config.range));
+    setAnswer(""); setWrong([]); setSolved(false); setShowHint(false);
+    setFeedback("차근차근 계산하고 답을 알려줘.");
+    attempts.current.clear(); hints.current = 0; locked.current = false;
+    setRound(index);
+    speakProblem(p);
+  }
+  function start() {
+    saveProgress({ ...readProgress(), mathSettings: settings });
+    setStage("play"); setCleanAnswers(0); rewarded.current = false;
+    next(0);
+  }
+  function choose(n: number) {
+    if (!prob || locked.current || !Number.isInteger(n) || n < 0) return;
+    if (attempts.current.has(n)) { setFeedback("다른 답도 생각해 볼까?"); return; }
+    attempts.current.add(n);
     if (n === prob.answer) {
-      setSolved(true);
-      onStar();
-      saySentenceKo("정답!");
-      setTimeout(next, 1300);
-    } else if (!wrong.includes(n)) {
-      setWrong((w) => [...w, n]);
-      setShowHint(true); // 틀리면 힌트 자동으로 보여주기
-      saySentenceKo("다시! 세어볼까?");
+      locked.current = true; setSolved(true); setAnswer(String(n));
+      const clean = attempts.current.size === 1 && hints.current === 0;
+      if (clean) setCleanAnswers((value) => value + 1);
+      recordEvent({ activity: "math", itemId: problemLabel(prob), label: problemLabel(prob), correct: attempts.current.size === 1, hints: hints.current, mathOperation: prob.op, mathRange: prob.range });
+      const progress = readProgress();
+      const range = progress.mathMode === "auto" ? recommendedMathRange(progress.events, settings.range) : settings.range;
+      if (range !== settings.range) {
+        const config = { ...settings, range };
+        setSettings(config); saveProgress({ ...progress, mathSettings: config });
+        setFeedback(`정답! 다음 덧셈·뺄셈은 ${range} 이내에 도전해 보자.`);
+      } else setFeedback("정답! 멋지게 계산했어. ✦");
+      saySentenceKo("정답! 멋지게 계산했어!");
+    } else {
+      setWrong((items) => [...items, n]);
+      setFeedback("조금만 더 생각해 보자. 필요하면 풀이 힌트를 눌러봐.");
+      setAnswer(""); saySentenceKo("조금만 더 생각해 보자.");
     }
-  };
-
-  if (!prob) return <div className="screen" />;
-
-  return (
-    <div className="screen">
-      <p className="subtitle">몇 일까? 🤔</p>
-      <div className="mp-problem">
-        <span>{prob.a}</span>
-        <span className="mp-op">{prob.op}</span>
-        <span>{prob.b}</span>
-        <span className="mp-op">=</span>
-        <span className={`mp-q ${solved ? "solved" : ""}`}>
-          {solved ? prob.answer : "?"}
-        </span>
-      </div>
-
-      <button className="mp-hint-btn" onClick={() => setShowHint((h) => !h)}>
-        💡 힌트
-      </button>
-      {showHint && <HintBlocks a={prob.a} b={prob.b} op={prob.op} />}
-
-      <div className="mp-choices">
-        {options.map((n) => {
-          const cls = solved && n === prob.answer ? "correct" : wrong.includes(n) ? "wrong" : "";
-          return (
-            <button key={n} className={`mp-choice ${cls}`} onClick={() => onChoose(n)}>
-              {n}
-            </button>
-          );
-        })}
-      </div>
+  }
+  if (stage === "setup") return <div className="screen math-screen">
+    <div className="page-heading"><span className="eyebrow">생각하는 힘이 쑥쑥</span><h1 className="title">오늘은 어떤 계산에 도전할까?</h1><p className="subtitle">덧셈, 뺄셈, 곱셈. 내 실력에 맞게 골라 봐.</p></div>
+    <div className="math-setup">
+      <div className="math-operations" aria-label="연산 선택">{MATH_OPERATIONS.map((o) => <button key={o.id} className={`math-operation ${settings.operation === o.id ? "active" : ""}`} aria-pressed={settings.operation === o.id} onClick={() => setSettings({ ...settings, operation: o.id })}><span>{o.symbol}</span><strong>{o.label}</strong></button>)}</div>
+      {settings.operation !== "multiply" && <div className="math-setting"><h2>어디까지 계산해 볼까?</h2><div className="math-chips">{MATH_RANGES.map((range) => <button key={range} className={settings.range === range ? "active" : ""} aria-pressed={settings.range === range} onClick={() => setSettings({ ...settings, range })}>{range} 이내</button>)}</div></div>}
+      {(settings.operation === "multiply" || settings.operation === "mixed") && <div className="math-setting"><h2>연습할 구구단 · 여러 개 골라도 좋아</h2><div className="math-chips">{Array.from({ length: 8 }, (_, i) => i + 2).map((n) => <button key={n} className={settings.tables.includes(n) ? "active" : ""} aria-pressed={settings.tables.includes(n)} onClick={() => {
+        const tables = settings.tables.includes(n) ? settings.tables.filter((value) => value !== n) : [...settings.tables, n].sort((a,b) => a-b);
+        if (tables.length) setSettings({ ...settings, tables });
+      }}>{n}단</button>)}</div></div>}
+      <div className="math-setting"><h2>어떻게 답할까?</h2><div className="math-chips"><button className={settings.answerMode === "input" ? "active" : ""} aria-pressed={settings.answerMode === "input"} onClick={() => setSettings({ ...settings, answerMode: "input" })}>직접 입력하기</button><button className={settings.answerMode === "choices" ? "active" : ""} aria-pressed={settings.answerMode === "choices"} onClick={() => setSettings({ ...settings, answerMode: "choices" })}>보기에서 고르기</button></div></div>
+      <div className="math-setting"><h2>몇 문제 풀까?</h2><div className="math-chips">{([5,10] as const).map((n) => <button key={n} className={settings.questions === n ? "active" : ""} aria-pressed={settings.questions === n} onClick={() => setSettings({ ...settings, questions: n })}>{n}문제</button>)}</div></div>
+      <div className="math-start-row"><p className="math-description">필요할 땐 풀이 힌트와 함께.<br />내 힘으로 끝까지 풀어 보자.</p><button className="big-pill" onClick={start}>계산 시작 →</button></div>
     </div>
-  );
+  </div>;
+  if (stage === "done") return <div className="screen reward-screen"><div className="celebrate">🏅</div><h1 className="title">{settings.questions}문제, 끝까지 해냈어!</h1><p className="subtitle">도움 없이 한 번에 맞힌 문제는 {cleanAnswers}개야.</p><div className="reward-stars">⭐</div><div className="inline-actions"><button className="big-pill" onClick={() => setStage("setup")}>다른 계산에 도전하기</button><button className="soft-btn" onClick={onDone}>쉬러 가기</button></div></div>;
+  if (!prob) return null;
+  return <div className="screen math-screen">
+    <div className="progress-caption">{prob.op === "×" ? `${prob.a}단 곱셈` : `${prob.range} 이내 ${prob.op === "+" ? "덧셈" : "뺄셈"}`} · {round + 1} / {settings.questions}</div>
+    <h1 className="section-title">얼마일까?</h1>
+    <div className="math-paper"><div className="mp-problem"><span>{prob.a}</span><span className="mp-op">{prob.op}</span><span>{prob.b}</span><span className="mp-op">=</span><span className={`mp-q ${solved ? "solved" : ""}`}>{solved ? prob.answer : "?"}</span></div></div>
+    <div className="inline-actions"><button className="soft-btn" onClick={() => speakProblem(prob)}>🔊 다시 듣기</button>{!solved && <button className="soft-btn" onClick={() => { hints.current = 1; setShowHint(true); saySentenceKo(mathHint(prob)); }}>💡 풀이 힌트</button>}</div>
+    {showHint && !solved && <div className="math-hint">{prob.op === "×" && <div className="multiplication-groups" aria-label={`${prob.a}개씩 ${prob.b}묶음`}>{Array.from({ length: prob.b }, (_, i) => <span className="dot-group" key={i}>{Array.from({ length: prob.a }, (_, j) => <i key={j} />)}</span>)}</div>}<p>{mathHint(prob)}</p></div>}
+    {!solved && (settings.answerMode === "choices" ? <div className="mp-choices">{options.map((n) => <button key={n} className={`mp-choice ${wrong.includes(n) ? "wrong" : ""}`} disabled={wrong.includes(n)} onClick={() => choose(n)}>{n}</button>)}</div> : <form className="math-answer-form" onSubmit={(e) => { e.preventDefault(); if (answer !== "") choose(Number(answer)); }}><input ref={input} className="math-answer-input" aria-label="계산한 답" inputMode="numeric" pattern="[0-9]*" autoComplete="off" value={answer} placeholder="정답" onChange={(e) => { if (/^\d{0,3}$/.test(e.target.value)) setAnswer(e.target.value); }} /><button className="big-pill" type="submit" disabled={answer === ""}>확인 ✓</button></form>)}
+    <p className="practice-feedback" role="status">{feedback}</p>
+    {solved && <button className="big-pill" onClick={() => {
+      if (round + 1 === settings.questions) {
+        if (!rewarded.current) { rewarded.current = true; onStar(); }
+        setStage("done"); saySentenceKo("끝까지 해냈어! 별을 하나 받았어!");
+      } else next(round + 1);
+    }}>{round + 1 === settings.questions ? "다 풀었어! ⭐" : "다음 문제 →"}</button>}
+    <button className="text-link" onClick={() => { cancelSpeech(); setStage("setup"); }}>연산 다시 고르기</button>
+  </div>;
 }

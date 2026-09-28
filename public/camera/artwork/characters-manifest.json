@@ -1,0 +1,24 @@
+{
+  "created": "2026-09-08",
+  "description": "Original child-friendly dinosaur hood, robot helmet and princess dress. Transparent alpha preserved.",
+  "assets": [
+    {
+      "id": "dinosaur",
+      "file": "/camera/artwork/dinosaur-v2.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: product-mockup. Asset type: premium AR face filter transparent PNG. A single charming wearable baby dinosaur hood, perfectly front-on orthographic and symmetric. Emerald and sage green softly padded plush dinosaur head with refined tiny reptile scales, two playful glossy dinosaur eyes on top of the hood, a rounded friendly snout resting above the wearer's forehead, a few short rounded cream teeth along the top edge, small golden dorsal spikes. A BIG VERTICAL OVAL FACE OPENING occupies the center and lower half: this opening must be fully transparent alpha, so a real human face can show through it. The oval opening extends from forehead to below chin, its width is about 58% of the hood width and height 55% of the hood height. Entire prop only, no face, person, mannequin, animal body, hands, background, or ground shadow. Cute and reassuring for young children, not frightening or aggressive. Tactile plush and realistic volume, polished high-end 3D product render, soft studio lighting. Whole hood centered with 6% transparent padding, portrait 4:5. Genuine transparency both outside and INSIDE the face opening, no checkerboard, no lettering or logos."
+    },
+    {
+      "id": "robot",
+      "file": "/camera/artwork/robot-v2.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: product-mockup. Asset type: premium AR face-filter transparent PNG sprite. One original friendly futuristic toy robot helmet, perfectly front-on orthographic and symmetric, polished silver and pearl white metal, cobalt blue side panels, small amber status lights, a subtle luminous cyan trim, rounded antenna nubs and circular ear discs. High quality dimensional bevels, restrained reflections and fine panel seams, playful high-end animated-film prop, never threatening. A BIG EMPTY VERTICAL OVAL FACE OPENING in the center occupies 62% of total helmet width and 62% of its height, from forehead to chin: it must be completely transparent alpha, no visor, glass, robot eyes, robot mouth or face plate over the opening. Side panels frame the cheeks, lower rounded metallic chin guard. No person, human face, mannequin, body, background or ground shadow. Entire helmet visible, centered, portrait 4:5, 6% transparent padding. Genuine transparent background and genuine transparent face opening, no checkerboard. No resemblance to an existing branded character, no weapons, text, logos or watermark."
+    },
+    {
+      "id": "princess",
+      "file": "/camera/artwork/princess-v2.png",
+      "tool": "built-in image_gen",
+      "prompt": "Use case: product-mockup. Asset type: premium transparent PNG central-torso costume for AR virtual try-on. One original beautiful children's fairy-tale princess dress on an invisible ghost mannequin, front-on orthographic and symmetrical. Warm blush pink and lavender silk, a fitted bodice with delicate silver floral embroidery, small pearl trim and a central heart-shaped rose gemstone, shallow rounded neckline with transparent neck opening. NO SLEEVES and NO ARMS: shoulder seams terminate at the armholes so the app can add moving sleeves. A graceful A-line skirt with layered translucent pink organza over lavender satin, delicate tiny embroidered stars, rich natural fabric folds and soft sheen. IMPORTANT PROPORTIONS: bodice shoulder width is about 55% of the maximum skirt hem width; bodice height is about 35% of total dress height, modest compact child costume proportions, not an enormous bridal skirt. Premium realistic 3D costume photography, gentle studio lighting. Whole garment visible from shoulder neckline to hem, portrait 2:3, 6% transparent padding. No person, face, neck, hands, mannequin, hanger, shoes, tiara, background, ground shadow, checkerboard, writing, logos, watermark or existing copyrighted character design. Genuine transparent alpha background and neck opening."
+    }
+  ]
+}

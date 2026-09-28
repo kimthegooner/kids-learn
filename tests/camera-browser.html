@@ -1,0 +1,76 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Camera tracker verification</title>
+<style>body{font:16px system-ui;padding:30px;line-height:1.7}button{font:inherit;padding:12px}img{max-height:240px}pre{white-space:pre-wrap}</style>
+<h1>Local face and pose tracker verification</h1>
+<p>Uses the existing licensed Saka portrait. Does not request camera access.</p>
+<button id="run">Run inference checks</button>
+<pre id="result" role="status">Ready</pre>
+<img id="sample" src="/images/players/saka.jpg" alt="Licensed Saka test portrait">
+<div id="effects" style="display:flex;gap:12px;flex-wrap:wrap"></div>
+<script type="module">
+import { drawFilter, drawDemo } from './camera-qa/camera-draw.js';
+import { demoFrame, CAMERA_FILTERS } from './camera-qa/camera.js';
+import { loadCameraArtwork } from './camera-qa/camera-artwork.js';
+let worker;
+const result=document.querySelector('#result');
+document.querySelector('#run').onclick=async()=>{
+  worker?.terminate(); document.querySelector('#effects').replaceChildren(); result.textContent='Loading local WASM and both models…';
+  const picture=document.querySelector('#sample'); await picture.decode();
+  const artwork=await loadCameraArtwork();
+  const assetStatus=(Object.keys(artwork).length===CAMERA_FILTERS.length?'PASS: ':'FAIL: ')+'artwork '+Object.keys(artwork).length+'/'+CAMERA_FILTERS.length;
+  result.textContent+='\n'+assetStatus;
+  worker=new Worker('/camera/tracker.js');
+  const timeout=setTimeout(()=>{result.textContent+='\nFAIL: timed out';worker.terminate();},60000);
+  worker.onerror=e=>{clearTimeout(timeout);result.textContent+='\nFAIL: '+e.message;worker.terminate();};
+  const send=async(mode,time)=>{const bitmap=await createImageBitmap(picture);worker.postMessage({type:'frame',bitmap,time,mode},[bitmap]);};
+  worker.onmessage=async({data})=>{
+    if(data.type==='ready'){result.textContent='PASS: both models initialized in worker\n'+assetStatus;await send('face',1000);}
+    if(data.type==='result'&&data.mode==='face'){
+      result.textContent+='\n'+(data.face.length>=468?'PASS':'FAIL')+': face landmarks '+data.face.length;
+      result.textContent+='\nFace anchor: '+JSON.stringify(data.face[33]);
+      for(const {id:filter} of CAMERA_FILTERS.filter(f=>f.mode==='face')){
+        const figure=document.createElement('figure');figure.style.margin='0';
+        const surface=document.createElement('canvas');surface.width=picture.naturalWidth;surface.height=picture.naturalHeight;surface.style.width='230px';
+        const ctx=surface.getContext('2d');ctx.drawImage(picture,0,0);
+        const painted=drawFilter(ctx,{face:data.face,pose:[]},filter,surface.width,surface.height,false,false,0,{artwork});
+        const caption=document.createElement('figcaption');caption.textContent=(painted?'PASS: ':'FAIL: ')+filter;
+        figure.append(surface,caption);document.querySelector('#effects').append(figure);
+        result.textContent+='\n'+caption.textContent;
+      }
+      await send('body',2000);
+    }
+    if(data.type==='result'&&data.mode==='body'){
+      result.textContent+='\n'+(data.pose.length===33?'PASS':'FAIL')+': pose inference returned '+data.pose.length+' landmarks';
+      result.textContent+='\nShoulder anchor: '+JSON.stringify(data.pose[11]);
+      for(const filter of ['hanbok','football']){
+        const figure=document.createElement('figure');figure.style.margin='0';
+        const surface=document.createElement('canvas');surface.width=720;surface.height=600;surface.style.width='330px';
+        const ctx=surface.getContext('2d');const sample=demoFrame(0);drawDemo(ctx,sample,720,600);
+        drawFilter(ctx,sample,filter,720,600,true,false,0,{artwork});
+        const caption=document.createElement('figcaption');caption.textContent=filter+' illustration fit';
+        figure.append(surface,caption);document.querySelector('#effects').append(figure);
+      }
+      await send('costume',3000);
+    }
+    if(data.type==='result'&&data.mode==='costume'){
+      const full=data.face.length>=468&&data.pose.length===33;
+      result.textContent+='\n'+(full?'PASS: ':'FAIL: ')+'costume tracks face and body together';
+      for(const demo of [false,true]){
+        const figure=document.createElement('figure');figure.style.margin='0';
+        const surface=document.createElement('canvas');surface.width=demo?720:picture.naturalWidth;surface.height=demo?600:picture.naturalHeight;surface.style.width=demo?'330px':'230px';
+        const ctx=surface.getContext('2d');const frame=demo?demoFrame(0):data;
+        if(demo)drawDemo(ctx,frame,surface.width,surface.height);else ctx.drawImage(picture,0,0);
+        const painted=drawFilter(ctx,frame,'princess',surface.width,surface.height,demo,false,0,{artwork});
+        const caption=document.createElement('figcaption');caption.textContent=(painted?'PASS: ':'FAIL: ')+'princess '+(demo?'illustration fit':'real landmarks');
+        figure.append(surface,caption);document.querySelector('#effects').append(figure);
+        result.textContent+='\n'+caption.textContent;
+      }
+      result.textContent+='\nComplete';clearTimeout(timeout);worker.terminate();
+    }
+    if(data.type==='error'){result.textContent+='\nFAIL: '+data.message;clearTimeout(timeout);worker.terminate();}
+  };
+  worker.postMessage({type:'init'});
+};
+window.addEventListener('pagehide',()=>worker?.terminate());
+</script>

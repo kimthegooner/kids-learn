@@ -5,26 +5,23 @@ import { useEffect, useState } from "react";
 import type { Word } from "./words";
 
 // 그림(있으면) 또는 이모지 폴백.
-// image 파일이 아직 없으면(404) onError 로 이모지로 자동 전환 →
-// AI 이미지를 public/images 에 채워 넣으면 그때부터 그림이 보인다.
+// 이미지 로딩 중에는 이모지를 보여주고, 로딩 성공 후 그림으로 바꾼다.
 export function Picture({ word, className }: { word: Word; className?: string }) {
-  const [failed, setFailed] = useState(false);
+  const [loaded, setLoaded] = useState<string | null>(null);
 
-  // 단어가 바뀌면 에러 상태 초기화 (재사용되는 컴포넌트 대비)
-  useEffect(() => setFailed(false), [word.image]);
+  // Show the emoji immediately, including while a missing image is still loading.
+  useEffect(() => {
+    if (!word.image) return;
+    const im = new Image();
+    im.onload = () => setLoaded(word.image!);
+    im.src = word.image;
+    return () => { im.onload = null; };
+  }, [word.image]);
 
-  if (word.image && !failed) {
-    return (
-      <img
-        key={word.image} // src마다 새 <img> 로 마운트 → 로딩 중 교체 시 잘못된 onError 방지
-        className={className}
-        src={word.image}
-        alt={word.ko}
-        onError={() => setFailed(true)}
-      />
-    );
+  if (word.image && loaded === word.image) {
+    return <img className={className} src={word.image} alt={word.ko} onError={() => setLoaded(null)} />;
   }
-  return <span className={className}>{word.emoji}</span>;
+  return <span className={className} role="img" aria-label={word.ko}>{word.emoji}</span>;
 }
 
 export function shuffle<T>(arr: T[]): T[] {

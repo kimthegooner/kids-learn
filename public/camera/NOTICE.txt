@@ -1,0 +1,15 @@
+MediaPipe Tasks Vision 1.0.1
+Copyright Google LLC
+Licensed under the Apache License, Version 2.0.
+https://www.apache.org/licenses/LICENSE-2.0
+https://github.com/google-ai-edge/mediapipe
+
+Google MediaPipe Face Landmarker and Pose Landmarker Lite, float16, model version 1.
+Model sources:
+https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task
+https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_lite/float16/1/pose_landmarker_lite.task
+Documentation and model cards:
+https://developers.google.com/edge/mediapipe/solutions/vision/face_landmarker
+https://developers.google.com/edge/mediapipe/solutions/vision/pose_landmarker
+
+The application's costume and accessory assets were generated with OpenAI's built-in image_gen tool and are rendered with original Canvas code. Generation prompts and asset paths are recorded in artwork/manifest.json and artwork/characters-manifest.json.

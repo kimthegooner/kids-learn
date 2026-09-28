@@ -1,147 +1,94 @@
 "use client";
 
-// 따라쓰기: 낱말을 폰트로 옅게 보여주고, 그 위에 손가락으로 따라 쓰기.
-// (획순 화살표는 없음 — 그건 '획순쓰기'(낱자) 활동에서.)
-
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { wordsByCategory, type Category } from "@/lib/words";
-import { sayKo, cancelSpeech } from "@/lib/speech";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { wordsByCategory, type Category, type Word } from "@/lib/words";
+import { sayKo, saySentenceKo, cancelSpeech } from "@/lib/speech";
+import { recordEvent } from "@/lib/progress";
+import { composeWord } from "@/lib/hangul";
 import { Picture } from "@/lib/ui";
+import TraceCanvas from "./TraceCanvas";
+
+export function WritingPractice({ word, singleSyllable = false, onComplete }: {
+  word: Word; singleSyllable?: boolean; onComplete: () => void;
+}) {
+  const chars = [...word.ko].filter((ch) => /[가-힣]/.test(ch));
+  const letters = singleSyllable ? chars.slice(0, 1) : chars;
+  const [index, setIndex] = useState(0);
+  const [hasInk, setHasInk] = useState(false);
+  const [feedback, setFeedback] = useState("초록 점에서 시작해 봐");
+  const completed = useRef(false);
+  const praised = useRef(false);
+  const char = letters[index];
+  const guide = useMemo(() => composeWord(char ?? ""), [char]);
+  const first = guide.strokes[0]?.d.match(/M\s*([\d.]+)[ ,]+([\d.]+)/);
+
+  useEffect(() => {
+    saySentenceKo(`${char}. 초록 점에서 시작해서 써 보자.`);
+    return cancelSpeech;
+  }, [char]);
+
+  if (!char) return <p>이 낱말에는 따라 쓸 한글이 없어요.</p>;
+  return <>
+    <div className="syllable-strip" aria-label="따라 쓸 글자">
+      {letters.map((letter, i) => <span key={i} className={i === index ? "current" : i < index ? "finished" : ""} aria-current={i === index ? "step" : undefined}>
+        {letter}{i < index && <small>✓</small>}
+      </span>)}
+    </div>
+    <div className="write-row">
+      <button className="picture-sound" onClick={() => sayKo(word)} aria-label={`${word.ko} 다시 듣기`}><Picture word={word} className="write-thumb" /></button>
+      <div className="syllable-stage">
+        <svg className="stroke-svg" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M50 4 V96 M4 50 H96" stroke="#ece4da" strokeDasharray="2 3" />
+          {guide.strokes.map((stroke, i) => <path key={i} d={stroke.d} fill="none" stroke="#c9c1b9" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />)}
+          {first && <circle cx={Number(first[1])} cy={Number(first[2])} r="4" fill="#328348" stroke="white" strokeWidth="1.5" />}
+        </svg>
+        <TraceCanvas key={index} label={`${char} 따라쓰기`} onInkChange={setHasInk} onStrokeComplete={() => {
+          setFeedback("한 획 그었네! 다 쓰면 아래 버튼을 눌러줘.");
+          if (!praised.current) { praised.current = true; saySentenceKo("한 획 그었네!"); }
+        }} />
+      </div>
+    </div>
+    <p className="practice-feedback" role="status">{feedback}</p>
+    <div className="inline-actions">
+      <button className="soft-btn" onClick={() => saySentenceKo(char)}>🔊 글자 듣기</button>
+      <button className="big-pill" disabled={!hasInk} onClick={() => {
+        if (!hasInk || completed.current) return;
+        if (index + 1 < letters.length) {
+          setIndex(index + 1);
+          setHasInk(false);
+          praised.current = false;
+          setFeedback("다음 글자도 초록 점에서 시작해 봐");
+        } else {
+          completed.current = true;
+          recordEvent({ activity: "write", itemId: singleSyllable ? `${word.id}:${char}` : word.id, label: singleSyllable ? `${char} (${word.ko})` : word.ko, language: "ko" });
+          saySentenceKo("끝까지 써 봤어! 잘했어!");
+          onComplete();
+        }
+      }}>{index + 1 < letters.length ? "다 썼어! 다음 글자 →" : "다 썼어! ✓"}</button>
+    </div>
+  </>;
+}
 
 export default function WriteScreen({ category }: { category: Category }) {
   const words = useMemo(() => wordsByCategory(category), [category]);
-  const [i, setI] = useState(0);
-  const word = words[i];
-
-  useEffect(() => {
-    sayKo(word);
-    return () => cancelSpeech();
-  }, [word]);
-
-  const prev = () => setI((n) => (n - 1 + words.length) % words.length);
-  const next = () => setI((n) => (n + 1) % words.length);
-
-  return (
-    <div className="screen">
-      <div className="write-row">
-        <div className="write-side">
-          <Picture word={word} className="write-thumb" />
-        </div>
-        {/* key={word.id} → 단어가 바뀌면 캔버스가 새로 비워짐 */}
-        <WordStage key={word.id} text={word.ko} />
-      </div>
-      <div className="word-line">
-        <span className="word-ko">{word.ko}</span>
-      </div>
-      <div className="nav-row">
-        <button className="round-btn" onClick={prev} aria-label="이전">
-          ◀
-        </button>
-        <button className="round-btn" onClick={() => sayKo(word)} aria-label="다시 듣기">
-          🔊
-        </button>
-        <button className="round-btn" onClick={next} aria-label="다음">
-          ▶
-        </button>
-      </div>
+  const [index, setIndex] = useState(0);
+  const [done, setDone] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+  const word = words[index];
+  function move(delta: number) { cancelSpeech(); setIndex((i) => (i + delta + words.length) % words.length); setDone(false); setAttempt((n) => n + 1); }
+  useEffect(() => cancelSpeech, []);
+  return <div className="screen writing-screen">
+    <h1 className="section-title">✏️ 한 글자씩 써 보자</h1>
+    {done ? <>
+      <div className="reward-stars">🌟</div>
+      <h2 className="title">{word.ko}, 끝까지 써 봤어!</h2>
+      <button className="big-pill" onClick={() => move(1)}>다음 낱말 →</button>
+      <button className="soft-btn" onClick={() => { setDone(false); setAttempt((n) => n + 1); }}>한 번 더 쓰기</button>
+    </> : <WritingPractice key={`${word.id}-${attempt}`} word={word} onComplete={() => setDone(true)} />}
+    <div className="inline-actions">
+      <button className="soft-btn" onClick={() => move(-1)}>◀ 이전 낱말</button>
+      <span>{index + 1} / {words.length}</span>
+      <button className="soft-btn" onClick={() => move(1)}>다음 낱말 ▶</button>
     </div>
-  );
-}
-
-function WordStage({ text }: { text: string }) {
-  const chars = useMemo(() => [...text], [text]);
-  const cells = chars.length;
-  const W = cells * 100;
-
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const drawing = useRef(false);
-  const last = useRef<{ x: number; y: number } | null>(null);
-
-  const setupCanvas = useCallback(() => {
-    const c = canvasRef.current;
-    if (!c) return;
-    const rect = c.getBoundingClientRect();
-    const dpr = window.devicePixelRatio || 1;
-    c.width = Math.round(rect.width * dpr);
-    c.height = Math.round(rect.height * dpr);
-    const ctx = c.getContext("2d");
-    if (!ctx) return;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.lineCap = "round";
-    ctx.lineJoin = "round";
-    ctx.lineWidth = 14;
-    ctx.strokeStyle = "#ff8a3d";
-  }, []);
-
-  const clearCanvas = useCallback(() => {
-    const c = canvasRef.current;
-    if (!c) return;
-    const ctx = c.getContext("2d");
-    if (!ctx) return;
-    ctx.save();
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.clearRect(0, 0, c.width, c.height);
-    ctx.restore();
-  }, []);
-
-  useEffect(() => {
-    setupCanvas();
-    const onResize = () => setupCanvas();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [setupCanvas]);
-
-  const getPos = (e: React.PointerEvent) => {
-    const c = canvasRef.current!;
-    const r = c.getBoundingClientRect();
-    return { x: e.clientX - r.left, y: e.clientY - r.top };
-  };
-  const onDown = (e: React.PointerEvent) => {
-    e.preventDefault();
-    drawing.current = true;
-    last.current = getPos(e);
-    canvasRef.current?.setPointerCapture(e.pointerId);
-  };
-  const onMove = (e: React.PointerEvent) => {
-    if (!drawing.current) return;
-    const ctx = canvasRef.current?.getContext("2d");
-    if (!ctx || !last.current) return;
-    const p = getPos(e);
-    ctx.beginPath();
-    ctx.moveTo(last.current.x, last.current.y);
-    ctx.lineTo(p.x, p.y);
-    ctx.stroke();
-    last.current = p;
-  };
-  const onUp = () => {
-    drawing.current = false;
-    last.current = null;
-  };
-
-  return (
-    <div
-      className="word-stage"
-      style={{ width: `min(92vw, ${cells * 210}px)`, aspectRatio: `${cells} / 1` }}
-    >
-      {/* 옅은 글자 가이드 (폰트) */}
-      <svg className="stroke-svg word" viewBox={`0 0 ${W} 100`} aria-hidden>
-        {chars.map((ch, i) => (
-          <text key={i} className="word-glyph" x={i * 100 + 50} y={52}>
-            {ch}
-          </text>
-        ))}
-      </svg>
-      <canvas
-        ref={canvasRef}
-        className="write-canvas"
-        onPointerDown={onDown}
-        onPointerMove={onMove}
-        onPointerUp={onUp}
-        onPointerLeave={onUp}
-      />
-      <button className="stroke-clear" onClick={clearCanvas} aria-label="지우기">
-        🧽
-      </button>
-    </div>
-  );
+  </div>;
 }

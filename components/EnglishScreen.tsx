@@ -4,9 +4,11 @@
 // 한국어 → 영어로 읽어주는 듣기 화면. (글 못 읽어도 소리로 익히기)
 // 카드가 바뀌면 자동 재생, 탭하면 다시, 🔊 한국어 / 🅰️ 영어 따로 듣기.
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { sayBoth, sayKo, sayEn, cancelSpeech } from "@/lib/speech";
+import { recordEvent } from "@/lib/progress";
 import { BASE } from "@/lib/config";
+import { introduction, type ChildProfile } from "@/lib/profile";
 
 type Line = { emoji: string; ko: string; en: string; kind: "talk" | "word"; img?: string };
 
@@ -14,7 +16,7 @@ const LINES: Line[] = [
   // 인사·자기소개
   { emoji: "👋", ko: "안녕!", en: "Hello!", kind: "talk" },
   { emoji: "☀️", ko: "좋은 아침!", en: "Good morning!", kind: "talk" },
-  { emoji: "👦", ko: "내 이름은 건오야", en: "My name is Geono.", kind: "talk", img: "/images/banner.png" },
+  { emoji: "🙋", ko: "네 이름은 뭐야?", en: "What is your name?", kind: "talk" },
   { emoji: "🤝", ko: "만나서 반가워", en: "Nice to meet you.", kind: "talk" },
   { emoji: "😊", ko: "어떻게 지내?", en: "How are you?", kind: "talk" },
   { emoji: "👍", ko: "나는 좋아", en: "I am good.", kind: "talk" },
@@ -90,33 +92,37 @@ const LINES: Line[] = [
   { emoji: "🙋", ko: "또 만나", en: "See you again.", kind: "talk" },
 ];
 
-export default function EnglishScreen() {
+export default function EnglishScreen({ profile }: { profile: ChildProfile }) {
   const [i, setI] = useState(0);
-  const line = LINES[i];
+  const selfIntroduction = useMemo(() => ({ ...LINES[2], ...introduction(profile) }), [profile.name, profile.englishName]);
+  const line = i === 2 ? selfIntroduction : LINES[i];
+  const session = useRef(`${Date.now()}-${Math.random()}`);
   const isWord = line.kind === "word";
 
   // 카드가 바뀌면 자동으로 "한국어 → 영어" 들려주기
   useEffect(() => {
-    sayBoth(line);
-    return () => cancelSpeech();
+    let live = true;
+    sayBoth(line).then((completed) => { if (live && completed) recordEvent({ activity: "learn", itemId: `english-${line.en}`, label: line.ko, language: "en" }, `${session.current}-${line.en}`); });
+    return () => { live = false; cancelSpeech(); };
   }, [line]);
 
   const prev = () => setI((n) => (n - 1 + LINES.length) % LINES.length);
   const next = () => setI((n) => (n + 1) % LINES.length);
 
   return (
-    <div className="screen">
-      <p className="subtitle">듣고 따라 말해봐 🗣️</p>
-      <div className="flash" onClick={() => sayBoth(line)}>
+    <div className="screen learn-screen">
+      <div className="progress-caption">{i + 1} / {LINES.length}</div>
+      <p className="subtitle">영국식 영어로 듣고 따라 말해봐 🗣️</p>
+      <button className="flash" onClick={() => sayBoth(line)} aria-label={`${line.ko} 다시 듣기`}>
         {line.img ? (
           <img className="flash-photo" src={`${BASE}${line.img}`} alt={line.ko} />
         ) : (
           <span className="flash-emoji">{line.emoji}</span>
         )}
-      </div>
+      </button>
       <div className="dlg-text">
         <span className={isWord ? "word-ko" : "dlg-ko"}>{line.ko}</span>
-        <span className={isWord ? "word-en" : "dlg-en"}>{line.en}</span>
+        <span lang="en-GB" className={isWord ? "word-en" : "dlg-en"}>{line.en}</span>
       </div>
       <div className="nav-row">
         <button className="round-btn" onClick={prev} aria-label="이전">
@@ -125,7 +131,7 @@ export default function EnglishScreen() {
         <button className="round-btn" onClick={() => sayKo(line)} aria-label="한국어 다시">
           🔊
         </button>
-        <button className="round-btn" onClick={() => sayEn(line)} aria-label="영어 다시">
+        <button className="round-btn" onClick={() => sayEn(line)} aria-label="영국식 영어 다시">
           🅰️
         </button>
         <button className="round-btn" onClick={next} aria-label="다음">

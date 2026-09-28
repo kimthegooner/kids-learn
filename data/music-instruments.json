@@ -1,0 +1,9 @@
+[
+  {"id":"piano","name":"피아노","emoji":"🎹","font":"acoustic_grand_piano","octave":0},
+  {"id":"guitar","name":"기타","emoji":"🎸","font":"acoustic_guitar_nylon","octave":0},
+  {"id":"violin","name":"바이올린","emoji":"🎻","font":"violin","octave":0},
+  {"id":"flute","name":"플루트","emoji":"🪈","font":"flute","octave":1},
+  {"id":"trumpet","name":"트럼펫","emoji":"🎺","font":"trumpet","octave":0},
+  {"id":"saxophone","name":"색소폰","emoji":"🎷","font":"alto_sax","octave":0},
+  {"id":"xylophone","name":"실로폰","emoji":"🎼","font":"xylophone","octave":0}
+]
